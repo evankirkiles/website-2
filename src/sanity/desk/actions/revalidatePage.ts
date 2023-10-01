@@ -41,7 +41,7 @@ const UpdatePageAction = (
         await revalidateItem({
           client,
           id,
-          tags: [`page:${document?.slug.current}`],
+          tags: [`page${document?.path.current}`],
           toast,
         });
         setLoading(false);

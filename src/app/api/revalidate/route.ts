@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     let revalidated: string[] = [];
     switch (body._type) {
       case 'site_page':
-        revalidated.push(`page:${body.slug.current}`);
+        revalidated.push(`page${body.path.current}`);
         break;
       default:
         throw new Error('Invalid revalidation type.');

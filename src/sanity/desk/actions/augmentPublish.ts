@@ -37,7 +37,7 @@ function augmentPublishAction(
             revalidateItem({
               client,
               id: props.id,
-              tags: [`page:${document?.slug.current}`],
+              tags: [`page${document.path.current}`],
               toast,
             }),
           PROPAGATION_WAIT_TIME_MS

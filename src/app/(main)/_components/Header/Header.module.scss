@@ -50,8 +50,23 @@
   grid-area: header;
   width: calc(100vw - 2 * var(--page-padding));
   margin: 0 auto;
+  margin-bottom: 0.5em;
   padding-top: var(--page-padding);
   background-color: theme-color('background');
+
+  &::after {
+    position: absolute;
+    height: 0.5em;
+    inset: 0;
+    top: 100%;
+    bottom: unset;
+    background: linear-gradient(theme-color('background'), transparent);
+    content: '';
+  }
+
+  & hr {
+    margin-bottom: 0;
+  }
 
   & p {
     margin-bottom: 0.25em;
