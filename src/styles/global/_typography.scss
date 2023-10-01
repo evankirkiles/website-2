@@ -12,7 +12,7 @@
 
 // Converts a px value to rem at compile time.
 @function pxToRem($pixel-value) {
-  $rem-value: math.div($pixel-value, 16) + rem;
+  $rem-value: math.div($pixel-value, 16px) + rem;
   @return $rem-value;
 }
 

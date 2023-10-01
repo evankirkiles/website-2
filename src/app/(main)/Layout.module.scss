@@ -1,0 +1,14 @@
+/*
+ * Layout.module.scss
+ * Author: Evan Kirkiles
+ * Created On Sun Oct 01 2023
+ * 2023 Design at Yale 
+ */
+
+.main {
+  flex: 1;
+  width: calc(100vw - 2 * var(--page-padding));
+  max-width: var(--max-main-width);
+  margin: 0 auto;
+  padding: calc(var(--page-padding) * 0.5) 0;
+}

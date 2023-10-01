@@ -13,8 +13,8 @@ import './globals.scss';
 
 // Base metadata for the entire app
 export const metadata: Metadata = {
-  title: 'A DAY App',
-  description: 'Welcome to my new DAY app!',
+  title: 'Evan Kirkiles',
+  description: 'Evan Kirkiles is a programmer and designer.',
   themeColor: '#ffffff',
   metadataBase: new URL(SITE_URL),
 };
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link
           rel="apple-touch-icon"
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <ColorSchemeScript />
       </head>
-      <body className={s.body}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

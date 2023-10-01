@@ -28,6 +28,12 @@ export default async function Page() {
 
   return (
     <article>
+      <p>
+        Evan Kirkiles is twenty-one years old, a software engineer, and maybe
+        even a designer and an artist, depending on who you ask. He is making
+        simple images and machines that live, color, and breathe on their own.
+      </p>
+      <p>He is currently looking for new-grad software engineering roles.</p>
       {preview && preview.token ? (
         <PreviewProvider token={preview.token}>
           <PreviewPageBuilder

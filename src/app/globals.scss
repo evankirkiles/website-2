@@ -28,9 +28,9 @@
   }
 
   // a standard padding to use across the page
-  --page-padding: 0.75rem;
+  --page-padding: 1rem;
   @include media('md') {
-    --page-padding: 1rem;
+    --page-padding: 1.5rem;
   }
 
   // a maximum width to use for main page content
@@ -47,10 +47,22 @@ body {
   background-color: theme-color('background');
   color: theme-color('content');
   line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template:
+    'header' auto
+    'main' 1fr
+    'footer' auto / 1fr;
+  width: 100%;
+  min-height: 100vh;
 }
 
 p,
 li {
+  margin-bottom: 0.5em;
   line-height: 1.3;
 }
 
@@ -61,4 +73,43 @@ li {
 
 :focus {
   outline: 3px solid var(--highlight-color);
+}
+
+main {
+  text-wrap: balance;
+  display: flex;
+  grid-area: main;
+  width: calc(100vw - 2 * var(--page-padding));
+  max-width: var(--max-main-width);
+  margin: 0 auto;
+  // padding: calc(var(--page-padding) * 0.5) 0;
+
+  & article {
+    margin: auto;
+  }
+}
+
+header,
+footer {
+  grid-area: header;
+  width: calc(100vw - 2 * var(--page-padding));
+  max-width: var(--max-main-width);
+  margin: 0 auto;
+  padding-top: var(--page-padding);
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8em;
+  }
+
+  & li {
+    margin: 0;
+  }
+}
+
+footer {
+  grid-area: footer;
+  padding-top: 0;
+  padding-bottom: var(--page-padding);
 }
