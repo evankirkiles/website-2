@@ -33,7 +33,7 @@ export default async function Page() {
       <p>
         Evan Kirkiles is a software engineer and designer, and maybe an artist.
         He is making simple things that live, work, and tell stories on their
-        own. He's previously worked with Channel Studio and the New York Times.
+        own. He has previously worked with Channel Studio and the New York Times.
         His site installations have been shown in the Yale CCAM.
       </p>
       <p>He is currently looking for new grad software engineering roles.</p>
