@@ -5,6 +5,7 @@
  * 2023 Design at Yale
  */
 
+import SVGLines from '@/assets/svg/lines';
 import PageBuilder from '@/components/PageBuilder';
 import PreviewPageBuilder from '@/components/PageBuilder/preview';
 import PreviewProvider from '@/components/PreviewProvider';
@@ -28,12 +29,14 @@ export default async function Page() {
 
   return (
     <article>
+      {/* <SVGLines /> */}
       <p>
-        Evan Kirkiles is twenty-one years old, a software engineer, and maybe
-        even a designer and an artist, depending on who you ask. He is making
-        simple images and machines that live, color, and breathe on their own.
+        Evan Kirkiles is a software engineer and designer, and maybe an artist.
+        He is making simple things that live, work, and tell stories on their
+        own. He's previously worked with Channel Studio and the New York Times.
+        His site installations have been shown in the Yale CCAM.
       </p>
-      <p>He is currently looking for new-grad software engineering roles.</p>
+      <p>He is currently looking for new grad software engineering roles.</p>
       {preview && preview.token ? (
         <PreviewProvider token={preview.token}>
           <PreviewPageBuilder

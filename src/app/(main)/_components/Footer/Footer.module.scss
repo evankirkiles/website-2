@@ -1,0 +1,36 @@
+/*
+ * Footer.module.scss
+ * Author: Evan Kirkiles
+ * Created On Sun Oct 01 2023
+ * 2023 Design at Yale 
+ */
+@import '@/styles/utils';
+
+.container {
+  & hr {
+    margin-bottom: 1em;
+  }
+
+  & a {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+  & svg {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+
+    & path {
+      fill: currentColor;
+    }
+  }
+
+  & li {
+    margin: 0;
+  }
+
+  & p {
+    float: right;
+  }
+}

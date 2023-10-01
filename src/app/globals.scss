@@ -34,7 +34,7 @@
   }
 
   // a maximum width to use for main page content
-  --max-main-width: 850px;
+  --max-main-width: 70ch;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -80,12 +80,17 @@ main {
   display: flex;
   grid-area: main;
   width: calc(100vw - 2 * var(--page-padding));
-  max-width: var(--max-main-width);
-  margin: 0 auto;
-  // padding: calc(var(--page-padding) * 0.5) 0;
+  // max-width: var(--max-main-width);
+  margin: 0 auto 0 var(--page-padding);
+  // margin: 0 auto;
 
   & article {
-    margin: auto;
+    max-width: var(--max-main-width);
+    // margin: auto 0;
+  }
+
+  & p {
+    margin: 0.5em 0;
   }
 }
 
@@ -93,23 +98,22 @@ header,
 footer {
   grid-area: header;
   width: calc(100vw - 2 * var(--page-padding));
-  max-width: var(--max-main-width);
+  // max-width: var(--max-main-width);
   margin: 0 auto;
   padding-top: var(--page-padding);
-
-  & ul {
-    display: flex;
-    flex-direction: row;
-    gap: 0.8em;
-  }
-
-  & li {
-    margin: 0;
-  }
 }
 
 footer {
   grid-area: footer;
   padding-top: 0;
-  padding-bottom: var(--page-padding);
+  padding-bottom: calc(var(--page-padding) * 0.5);
+}
+
+a {
+  &:hover {
+    color: theme-color('content2');
+    text-decoration: underline;
+    // background-color: theme-color('content');
+    // color: theme-color('background');
+  }
 }
