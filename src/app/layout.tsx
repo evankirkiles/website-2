@@ -15,7 +15,6 @@ import './globals.scss';
 export const metadata: Metadata = {
   title: 'Evan Kirkiles',
   description: 'Evan Kirkiles is a programmer and designer.',
-  themeColor: '#ffffff',
   metadataBase: new URL(SITE_URL),
 };
 

@@ -10,7 +10,6 @@
 import Header from '@/app/(main)/_components/Header';
 import SkipLink from '@/components/SkipLink';
 import { PropsWithChildren } from 'react';
-import s from './Layout.module.scss';
 import Footer from '@/app/(main)/_components/Footer';
 
 export default function Layout({ children }: PropsWithChildren) {
