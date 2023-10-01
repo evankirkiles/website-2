@@ -6,9 +6,24 @@
  */
 
 .main {
-  flex: 1;
+  text-wrap: balance;
+  display: flex;
+  grid-area: main;
   width: calc(100vw - 2 * var(--page-padding));
-  max-width: var(--max-main-width);
-  margin: 0 auto;
-  padding: calc(var(--page-padding) * 0.5) 0;
+  // max-width: var(--max-main-width);
+  margin: 0 auto 0 var(--page-padding);
+  // margin: 0 auto;
+
+  & article {
+    max-width: var(--max-main-width);
+    // margin: auto 0;
+  }
+
+  & p {
+    margin: 0.5em 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 }

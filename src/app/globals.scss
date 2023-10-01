@@ -34,7 +34,7 @@
   }
 
   // a maximum width to use for main page content
-  --max-main-width: 70ch;
+  --max-main-width: 66ch;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -71,49 +71,12 @@ li {
   color: theme-color('content');
 }
 
-:focus {
-  outline: 3px solid var(--highlight-color);
-}
-
-main {
-  text-wrap: balance;
-  display: flex;
-  grid-area: main;
-  width: calc(100vw - 2 * var(--page-padding));
-  // max-width: var(--max-main-width);
-  margin: 0 auto 0 var(--page-padding);
-  // margin: 0 auto;
-
-  & article {
-    max-width: var(--max-main-width);
-    // margin: auto 0;
-  }
-
-  & p {
-    margin: 0.5em 0;
-  }
-}
-
-header,
-footer {
-  grid-area: header;
-  width: calc(100vw - 2 * var(--page-padding));
-  // max-width: var(--max-main-width);
-  margin: 0 auto;
-  padding-top: var(--page-padding);
-}
-
-footer {
-  grid-area: footer;
-  padding-top: 0;
-  padding-bottom: calc(var(--page-padding) * 0.5);
+:focus-visible {
+  outline: 3px double var(--highlight-color);
 }
 
 a {
   &:hover {
     color: theme-color('content2');
-    text-decoration: underline;
-    // background-color: theme-color('content');
-    // color: theme-color('background');
   }
 }

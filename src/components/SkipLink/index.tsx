@@ -20,6 +20,7 @@ export default function SkipLink() {
   return (
     <button
       onClick={() => {
+        console.log('here');
         document.querySelector<HTMLElement>('main')?.focus();
       }}
       className={s.content_skip}

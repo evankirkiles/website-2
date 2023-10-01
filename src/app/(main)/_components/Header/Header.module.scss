@@ -7,10 +7,13 @@
 @import '@/styles/utils';
 
 .container {
-  // display: grid;
-  // column-gap: 0.5em;
-  // grid-template: 'logo links' 1fr 'hr hr' auto / auto 1fr;
-  // flex-direction: row;
+  position: sticky;
+  top: 0;
+  grid-area: header;
+  width: calc(100vw - 2 * var(--page-padding));
+  // max-width: var(--max-main-width);
+  margin: 0 auto;
+  padding-top: var(--page-padding);
 
   & p {
     width: min-content;
@@ -42,21 +45,32 @@
 }
 
 .container2 {
+  position: sticky;
+  top: 0;
+  grid-area: header;
+  width: calc(100vw - 2 * var(--page-padding));
+  margin: 0 auto;
+  padding-top: var(--page-padding);
+
   & p {
     margin-bottom: 0.25em;
     font-weight: 700;
     font-size: 1.3em;
   }
 
-  & hr {
-    grid-area: hr;
-    height: 2px;
-  }
-
   & ul {
     display: flex;
     flex-direction: row;
-    gap: 0.8em;
+    gap: 0.5em;
+
+    & a {
+      margin-left: -0.2em;
+      padding: 0 0.2em;
+      text-underline-offset: 0.15em;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   & li {

@@ -102,6 +102,13 @@ export type PeCopy = {
    *
    */
   content?: Array<SanityKeyed<SanityBlock>>;
+
+  /**
+   * columns — `number`
+   *
+   * How many evenly-spaced columns to break the text into. Default 1.
+   */
+  columns: number;
 };
 
 export type Documents = SitePage;

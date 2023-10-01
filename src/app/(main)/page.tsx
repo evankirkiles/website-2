@@ -20,29 +20,28 @@ import getPreview from '@/util/getPreview';
 
 export default async function Page() {
   const preview = getPreview();
-  const params = { pageSlug: `/` };
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
-    params,
-    { next: { tags: [`page:${params.pageSlug}`] } }
+    { pageSlug: '/' },
+    { next: { tags: [`page:/`] } }
   );
 
   return (
     <article>
       {/* <SVGLines /> */}
-      <p>
+      {/* <p>
         Evan Kirkiles is a software engineer and designer, and maybe an artist.
         He is making simple things that live, work, and tell stories on their
         own. He has previously worked with Channel Studio and the New York Times.
         His site installations have been shown in the Yale CCAM.
       </p>
-      <p>He is currently looking for new grad software engineering roles.</p>
+      <p>He is currently looking for new grad software engineering roles.</p> */}
       {preview && preview.token ? (
         <PreviewProvider token={preview.token}>
           <PreviewPageBuilder
             initialValue={page ?? { pageBuilder: undefined }}
             query={pageQuery}
-            params={params}
+            params={{ pageSlug: '/' }}
           />
         </PreviewProvider>
       ) : (

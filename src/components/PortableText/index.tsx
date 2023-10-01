@@ -36,17 +36,6 @@ const components: PortableTextComponents = {
       );
     },
   },
-  // common list types
-  list: {
-    bullet: ({ children }) => <ul className={classNames(s.ul)}>{children}</ul>,
-    number: ({ children }) => <ol className={classNames(s.ol)}>{children}</ol>,
-  },
-  // common list items
-  listItem: ({ children }) => <li className={classNames(s.li)}>{children}</li>,
-  // bloc types
-  block: {
-    normal: ({ children }) => <p className={classNames(s.p)}>{children}</p>,
-  },
 };
 
 export default components;

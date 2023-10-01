@@ -5,7 +5,7 @@
  * 2023 Design at Yale
  */
 
-import { FiSettings, FiCalendar } from 'react-icons/fi';
+import { FiSettings, FiCalendar, FiUser } from 'react-icons/fi';
 import { DocumentsIcon, DocumentTextIcon, HomeIcon } from '@sanity/icons';
 import { StructureBuilder, StructureResolver } from 'sanity/desk';
 import { ComponentType } from 'react';
@@ -14,9 +14,9 @@ import { ComponentType } from 'react';
 
 // These are the root pages and their corresponding icons. Add entries here
 // to make quick-to-jump-to pages with specialized icons.
-const ROOT_PAGES: Record<string, ComponentType<{}>> = {
-  '/': HomeIcon,
-  '/about': FiCalendar,
+const ROOT_PAGES: Record<string, [ComponentType<{}>, string]> = {
+  page0: [HomeIcon, '/'],
+  page1: [FiUser, '/about'],
 };
 
 /* --------------------------- Custom list entries -------------------------- */
@@ -41,10 +41,10 @@ const RootPages = (S: StructureBuilder) =>
         .id('site_page')
         .title('Root Pages')
         .items(
-          Object.entries(ROOT_PAGES).map(([id, Icon]) =>
+          Object.entries(ROOT_PAGES).map(([id, [Icon, title]]) =>
             S.documentListItem({ schemaType: 'site_page', id })
               .icon(Icon)
-              .title(id)
+              .title(title)
           )
         )
     );

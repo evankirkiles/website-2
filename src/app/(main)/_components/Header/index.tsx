@@ -6,11 +6,15 @@
  */
 import Link from 'next/link';
 import s from './Header.module.scss';
+import SkipLink from '@/components/SkipLink';
 
 export default function Header() {
   return (
     <header className={s.container2}>
-      <p>Evan Kirkiles</p>
+      <SkipLink />
+      <p>
+        <Link href="/">Evan Kirkiles</Link>
+      </p>
       <nav>
         <ul>
           <li>

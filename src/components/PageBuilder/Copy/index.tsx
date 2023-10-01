@@ -10,5 +10,9 @@ import { PeCopy } from '@/sanity/schema';
 import { PortableText } from '@portabletext/react';
 
 export default function Copy({ value }: { value: PeCopy }) {
-  return <PortableText value={value.content ?? []} components={components} />;
+  const contents = (
+    <PortableText value={value.content ?? []} components={components} />
+  );
+  if (value.columns <= 1) return contents;
+  return <div style={{ columnCount: value.columns }}>{contents}</div>;
 }
