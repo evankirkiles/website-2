@@ -4,14 +4,16 @@
  * Created On Fri Sep 01 2023
  * 2023 Design at Yale
  */
+import { ColorSchemeScript } from '@/util/earlyScripts';
 import s from './NotFound.module.scss';
 import Link from 'next/link';
 
 export default function NotFound() {
   return (
     <div className={s.container}>
+      <ColorSchemeScript />
       <h1>Page not found.</h1>
-      <a href="/">Go home</a>
+      <Link href="/">Go home</Link>
     </div>
   );
 }
