@@ -24,8 +24,8 @@ export async function generateStaticParams() {
   const pages: SitePage[] = await getClient().fetch(pagesQuery, undefined, {
     next: { revalidate: 0 },
   });
-  return pages.map(({ slug }) => ({
-    pageSlug: slug.current.replace('/', '').split('/'),
+  return pages.map(({ path }) => ({
+    pageSlug: path.current.replace('.', '').split('.'),
   }));
 }
 
@@ -40,11 +40,11 @@ interface PageProps {
 
 export default async function SubPage({ params: { pageSlug } }: PageProps) {
   const preview = getPreview();
-  const params = { pageSlug: `/${pageSlug.join('/')}` };
+  const params = { path: `.${pageSlug.join('.')}` };
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     params,
-    { next: { tags: [`page:${params.pageSlug}`] } }
+    { next: { tags: [`page${params.path}`] } }
   );
   if (!page) notFound();
 
@@ -73,9 +73,9 @@ export const revalidate = false;
 
 // generate the metadata for the page.
 export async function generateMetadata({ params: { pageSlug } }: PageProps) {
-  const params = { pageSlug: `/${pageSlug.join('/')}` };
+  const params = { path: `.${pageSlug.join('.')}` };
   const page: SitePage | null = await getClient().fetch(pageQuery, params, {
-    next: { tags: [`page:${params.pageSlug}`] },
+    next: { tags: [`page${params.path}`] },
   });
   if (!page) return {};
 
@@ -104,12 +104,12 @@ export async function generateMetadata({ params: { pageSlug } }: PageProps) {
     openGraph: {
       title: OGTitle,
       description,
-      url: params.pageSlug,
+      url: params.path.replace('.', '/'),
     },
     twitter: {
       title,
       description,
-      site: params.pageSlug,
+      site: params.path.replace('.', '/'),
     },
   };
 

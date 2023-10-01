@@ -10,11 +10,11 @@
 
 import { groq } from 'next-sanity';
 
-export const pagesQuery = groq`*[_type == "site_page" && slug.current != "/"] {
+export const pagesQuery = groq`*[_type == "site_page" && path.current != "."] {
   _id, slug
 }`;
 
-export const pageQuery = groq`*[_type == "site_page" && slug.current == $pageSlug][0] {
+export const pageQuery = groq`*[_type == "site_page" && path.current == $path][0] {
   _id, title, pageBuilder[] {
     ...,
   }

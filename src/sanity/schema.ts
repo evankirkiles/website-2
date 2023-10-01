@@ -52,11 +52,11 @@ export interface SitePage extends SanityDocument {
   title: string;
 
   /**
-   * Slug — `slug`
+   * Path — `slug`
    *
-   * The path to the page on the site
+   * The path to the page on the site, as a relative path. E.g. ".artists.johnlennon".
    */
-  slug: { _type: "slug"; current: string };
+  path: { _type: "path"; current: string };
 
   /**
    * Page Builder — `array`

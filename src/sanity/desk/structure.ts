@@ -14,10 +14,13 @@ import { ComponentType } from 'react';
 
 // These are the root pages and their corresponding icons. Add entries here
 // to make quick-to-jump-to pages with specialized icons.
-const ROOT_PAGES: Record<string, [ComponentType<{}>, string]> = {
-  page0: [HomeIcon, '/'],
-  page1: [FiUser, '/about'],
-};
+// const ROOT_PAGES: Record<string, [ComponentType<{}>, string]> = {
+//   page0: [HomeIcon, '/'],
+//   page1: [FiUser, '/art'],
+//   page2: [FiUser, '/software'],
+//   page3: [FiUser, '/about'],
+//   page4: [FiUser, '/about'],
+// };
 
 /* --------------------------- Custom list entries -------------------------- */
 
@@ -37,30 +40,19 @@ const RootPages = (S: StructureBuilder) =>
     .title('Root Pages')
     .icon(DocumentsIcon)
     .child(
-      S.list()
-        .id('site_page')
+      S.documentTypeList('site_page')
         .title('Root Pages')
-        .items(
-          Object.entries(ROOT_PAGES).map(([id, [Icon, title]]) =>
-            S.documentListItem({ schemaType: 'site_page', id })
-              .icon(Icon)
-              .title(title)
-          )
-        )
+        .filter('_type == "site_page" && path.current in path("*")')
     );
 
 const CustomPages = (S: StructureBuilder) =>
   S.documentTypeListItem('site_page')
-    .title('Custom Pages')
+    .title('Nested Pages')
     .icon(DocumentTextIcon)
     .child(
       S.documentTypeList('site_page')
-        .title('Custom Pages')
-        .filter(
-          `_type == "site_page" && !(slug.current in [${Object.keys(ROOT_PAGES)
-            .map((slug) => `"${slug}"`)
-            .join(', ')}])`
-        )
+        .title('Nested Pages')
+        .filter('_type == "site_page" && path.current in path("*.**")')
     );
 
 /* -------------------------------------------------------------------------- */

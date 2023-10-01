@@ -64,12 +64,20 @@
     flex-direction: row;
     gap: 0.5em;
 
+    &:has(a[aria-current='page']) a {
+      opacity: 0.3;
+    }
+
     & a {
       margin-left: -0.2em;
       padding: 0 0.2em;
       text-underline-offset: 0.15em;
-      &:hover {
-        text-decoration: underline;
+      transition: opacity 0.2s ease-in-out;
+
+      &[aria-current='page'] {
+        // text-decoration: underline;
+        opacity: 1 !important;
+        pointer-events: none;
       }
     }
   }

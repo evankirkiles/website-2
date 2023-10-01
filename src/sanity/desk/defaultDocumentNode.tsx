@@ -30,7 +30,7 @@ const defaultDocumentNode: DefaultDocumentNodeResolver = (S, { schemaType }) => 
                 options={{
                   ...props.options,
                   url: `${window.location.origin}/api/preview?redirect=${
-                    document.displayed.slug?.current || '/'
+                    document.displayed.path?.current.replace('.', '/') || '/'
                   }`,
                 }}
               />

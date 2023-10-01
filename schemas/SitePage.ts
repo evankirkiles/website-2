@@ -12,7 +12,10 @@ const SitePage = defineType({
   name: 'site_page',
   type: 'document' as const,
   title: 'Site Page',
-  groups: [{ name: 'seo', title: 'SEO' }],
+  groups: [
+    { name: 'content', title: 'Content' },
+    { name: 'seo', title: 'SEO' },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -21,20 +24,24 @@ const SitePage = defineType({
       validation: (Rule) => Rule.required(),
       codegen: { required: true },
       description: 'The title of the page.',
+      group: 'content',
     }),
     defineField({
-      name: 'slug',
+      name: 'path',
       type: 'slug' as const,
-      title: 'Slug',
+      title: 'Path',
       validation: (Rule) => Rule.required(),
       codegen: { required: true },
-      description: 'The path to the page on the site',
+      description:
+        'The path to the page on the site, as a relative path. E.g. ".artists.johnlennon".',
+      group: 'content',
     }),
     defineField({
       name: 'pageBuilder',
       type: 'array' as const,
       title: 'Page Builder',
       description: 'Assemble your page using configurable modules.',
+      group: 'content',
       validation: (Rule) => Rule.required(),
       // map all of our page elements to pageBuilder sub-types
       of: pageElements.map(({ title, name }) =>
@@ -88,7 +95,14 @@ const SitePage = defineType({
   ],
   preview: {
     select: {
-      title: 'slug.current',
+      title: 'title',
+      subtitle: 'path.current',
+    },
+    prepare: ({ title, subtitle }) => {
+      return {
+        title,
+        subtitle: subtitle.replace('.', '/'),
+      };
     },
   },
 });

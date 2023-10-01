@@ -22,8 +22,8 @@ export default async function Page() {
   const preview = getPreview();
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
-    { pageSlug: '/' },
-    { next: { tags: [`page:/`] } }
+    { path: '.' },
+    { next: { tags: [`page.`] } }
   );
 
   return (
@@ -41,7 +41,7 @@ export default async function Page() {
           <PreviewPageBuilder
             initialValue={page ?? { pageBuilder: undefined }}
             query={pageQuery}
-            params={{ pageSlug: '/' }}
+            params={{ path: '.' }}
           />
         </PreviewProvider>
       ) : (

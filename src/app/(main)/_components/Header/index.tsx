@@ -7,27 +7,28 @@
 import Link from 'next/link';
 import s from './Header.module.scss';
 import SkipLink from '@/components/SkipLink';
+import NavLink from '@/app/(main)/_components/Header/NavLink';
 
 export default function Header() {
   return (
     <header className={s.container2}>
       <SkipLink />
       <p>
-        <Link href="/">Evan Kirkiles</Link>
+        <NavLink href="/">Evan Kirkiles</NavLink>
       </p>
       <nav>
         <ul>
           <li>
-            <Link href="/art">Art</Link>
+            <NavLink href="/art">Art</NavLink>
           </li>
           <li>
-            <Link href="/art">Software</Link>
+            <NavLink href="/software">Software</NavLink>
           </li>
           <li>
-            <Link href="/art">Design</Link>
+            <NavLink href="/design">Design</NavLink>
           </li>
           <li>
-            <Link href="/art">About</Link>
+            <NavLink href="/about">About</NavLink>
           </li>
         </ul>
       </nav>
