@@ -24,7 +24,7 @@ export default function PageBuilder({ content, isPreview }: PageBuilderProps) {
   return content.map((pageBlock) => {
     switch (pageBlock._type) {
       case 'pe_copy':
-        return <Copy value={pageBlock} />;
+        return <Copy key={pageBlock._key} value={pageBlock} />;
     }
   });
 }
