@@ -13,7 +13,7 @@ export default function Footer() {
       <ul>
         <li>
           <a
-            href="https://creativecommons.org/licenses/by-nc-sa/4.0"
+            href="mailto:kirkilese@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,7 +38,16 @@ export default function Footer() {
         <li>Instagram</li>
         <li>Github</li>
       </ul> */}
-      <p>Evan&nbsp;Kirkiles&nbsp;©&nbsp;2023 —&nbsp;NYU-CCL&nbsp;2.0</p>
+      <p>
+        Evan&nbsp;Kirkiles&nbsp;©&nbsp;2023 —&nbsp;
+        <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CC&nbsp;BY&nbsp;4.0
+        </a>
+      </p>
     </footer>
   );
 }

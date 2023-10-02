@@ -11,7 +11,7 @@
 import { groq } from 'next-sanity';
 
 export const pagesQuery = groq`*[_type == "site_page" && path.current != "."] {
-  _id, slug
+  _id, path
 }`;
 
 export const pageQuery = groq`*[_type == "site_page" && path.current == $path][0] {
