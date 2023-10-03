@@ -8,7 +8,7 @@
  */
 
 const METADATA = {
-  title: 'A Daylight App',
+  title: 'Evan Kirkiles',
 };
 
 export default METADATA;
