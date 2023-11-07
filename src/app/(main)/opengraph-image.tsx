@@ -56,9 +56,9 @@ export default async function Image() {
           <span
             style={{
               fontWeight: '400',
-              fontStyle: 'italic',
               fontSize: 36,
-              letterSpacing: '0.3em',
+              letterSpacing: '0.1em',
+              color: '#c0c0c0',
             }}
           >
             https://evankirkiles.com
@@ -98,14 +98,6 @@ export default async function Image() {
           ).then((res) => res.arrayBuffer()),
           style: 'normal',
           weight: 700,
-        },
-        {
-          name: 'Arial',
-          data: await fetch(
-            new URL('../../assets/fonts/Arial_Italic.ttf', import.meta.url)
-          ).then((res) => res.arrayBuffer()),
-          style: 'italic',
-          weight: 400,
         },
       ],
     }
