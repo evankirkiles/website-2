@@ -5,7 +5,6 @@
  * 2023 Design at Yale
  */
 
-import DAY from '@/assets/svg/DAY';
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
@@ -34,8 +33,6 @@ export default async function Image({
           display: 'flex',
           flexDirection: 'column',
           padding: '3rem',
-          // alignItems: 'center',
-          // justifyContent: 'center',
           fontWeight: '700',
         }}
       >
