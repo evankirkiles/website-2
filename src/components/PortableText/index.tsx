@@ -14,6 +14,9 @@ import Link from 'next/link';
 
 const components: PortableTextComponents = {
   // marks, e.g. <a> or <em>
+  listItem({ children }) {
+    return <li className={classNames(s.li)}>{children}</li>;
+  },
   marks: {
     link({ value, children }) {
       const href = value?.href;
