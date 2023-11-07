@@ -25,7 +25,7 @@ export async function generateStaticParams() {
     next: { revalidate: 0 },
   });
   return pages.map(({ path }) => ({
-    pageSlug: path.current.replace('.', '').split('.'),
+    pageSlug: path.current.replace('.', '').split('.')[0],
   }));
 }
 
@@ -35,12 +35,12 @@ export async function generateStaticParams() {
 // All subpages are simply a wrapped PageBuilder with necessary DOM elements.
 
 interface PageProps {
-  params: { pageSlug: string[] };
+  params: { pageSlug: string };
 }
 
 export default async function SubPage({ params: { pageSlug } }: PageProps) {
   const preview = getPreview();
-  const params = { path: `.${pageSlug.join('.')}` };
+  const params = { path: `.${pageSlug}` };
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     params,
@@ -73,7 +73,7 @@ export const revalidate = false;
 
 // generate the metadata for the page.
 export async function generateMetadata({ params: { pageSlug } }: PageProps) {
-  const params = { path: `.${pageSlug.join('.')}` };
+  const params = { path: `.${pageSlug}` };
   const page: SitePage | null = await getClient().fetch(pageQuery, params, {
     next: { tags: [`page${params.path}`] },
   });
@@ -81,7 +81,7 @@ export async function generateMetadata({ params: { pageSlug } }: PageProps) {
 
   // create metadata titles
   const title = `${page.seo_title || page.title} | ${METADATA.title}`;
-  const OGTitle = `${page.seo_title || page.title} // ${METADATA.title}`;
+  const OGTitle = `${page.seo_title || page.title} | ${METADATA.title}`;
 
   // parse page body into a description if no description provided
   const descriptionUF =
