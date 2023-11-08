@@ -1,0 +1,18 @@
+/*
+ * Software.module.scss
+ * Author: evan kirkiles
+ * Created On Wed Nov 08 2023
+ * 2023 Digital Portfolio 
+ */
+
+.container {
+  width: 100%;
+
+  & table {
+    width: 100%;
+
+    & td:first-of-type {
+      width: 100%;
+    }
+  }
+}

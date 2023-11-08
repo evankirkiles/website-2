@@ -94,6 +94,71 @@ export interface SitePage extends SanityDocument {
   last_revalidated?: string;
 }
 
+/**
+ * Software
+ *
+ *
+ */
+export interface Software extends SanityDocument {
+  _type: "software";
+
+  /**
+   * Short Title — `string`
+   *
+   * A short title for the table view of the software.
+   */
+  short_title: string;
+
+  /**
+   * Link — `url`
+   *
+   * A link to a page for the software.
+   */
+  link?: string;
+
+  /**
+   * Date — `date`
+   *
+   * When was this software created?
+   */
+  date?: string;
+
+  /**
+   * Group — `string`
+   *
+   * A group for the software.
+   */
+  group: string;
+
+  /**
+   * Title — `string`
+   *
+   * The title of the software.
+   */
+  title: string;
+
+  /**
+   * Slug — `slug`
+   *
+   * (Optional) A slug for the software's page on the site.
+   */
+  slug?: { _type: "slug"; current: string };
+
+  /**
+   * Page Builder — `array`
+   *
+   * The event's page on the DAY site.
+   */
+  pageBuilder?: Array<SanityKeyed<PeCopy>>;
+
+  /**
+   * Last Revalidated — `datetime`
+   *
+   * When this page was last revalidated. Re-publish or manually revalidate to change.
+   */
+  last_revalidated?: string;
+}
+
 export type PeCopy = {
   _type: "pe_copy";
   /**
@@ -111,4 +176,4 @@ export type PeCopy = {
   columns: number;
 };
 
-export type Documents = SitePage;
+export type Documents = SitePage | Software;

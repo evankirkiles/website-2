@@ -234,7 +234,7 @@ th,
 td {
   -webkit-border-horizontal-spacing: 0;
   -webkit-border-vertical-spacing: 0;
-  display: block;
+  // display: block;
   width: auto;
   height: auto;
   margin: 0;
@@ -245,11 +245,6 @@ td {
   border-spacing: 0;
   font-weight: inherit;
   text-align: left;
-}
-
-th,
-td {
-  display: inline;
 }
 
 input[type='search'] {

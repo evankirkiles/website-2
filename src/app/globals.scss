@@ -58,6 +58,30 @@ body {
     'footer' auto / 1fr;
   width: 100%;
   min-height: 100svh;
+
+  // &::after {
+  //   position: fixed;
+  //   inset: var(--header-height) var(--page-padding);
+  //   background: linear-gradient(
+  //       to top left,
+  //       transparent 0%,
+  //       transparent calc(50% - 0.8px),
+  //       theme-color('content') 50%,
+  //       transparent calc(50% + 0.8px),
+  //       transparent 100%
+  //     ),
+  //     linear-gradient(
+  //       to top right,
+  //       transparent 0%,
+  //       transparent calc(50% - 0.8px),
+  //       theme-color('content') 50%,
+  //       transparent calc(50% + 0.8px),
+  //       transparent 100%
+  //     );
+  //   content: '';
+  //   // opacity: 0.2;
+  //   pointer-events: none;
+  // }
 }
 
 p,

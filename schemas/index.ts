@@ -11,7 +11,8 @@
 import { SchemaTypeDefinition } from '@sanity/types';
 import SitePage from './SitePage';
 import pageElements from './page';
+import entities from './entities';
 
-const schemas: SchemaTypeDefinition[] = [SitePage, ...pageElements];
+const schemas: SchemaTypeDefinition[] = [SitePage, ...entities, ...pageElements];
 
 export default schemas;
