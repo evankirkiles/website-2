@@ -2,7 +2,7 @@
  * env.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * A file to declare required .env variables for your app. Some standard ones
  * (for using Sanity with Next.js) have been defined already for you.

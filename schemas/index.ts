@@ -2,7 +2,7 @@
  * index.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * This is the base export which exposes your Schema types to Sanity. All new
  * types and documents should be added to this array.

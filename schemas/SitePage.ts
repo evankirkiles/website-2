@@ -2,7 +2,7 @@
  * SitePage.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
 import { defineArrayMember, defineField, defineType } from 'sanity';

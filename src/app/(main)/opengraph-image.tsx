@@ -2,7 +2,7 @@
  * opengraph-image.tsx
  * Author: Evan Kirkiles
  * Created On Tue Nov 07 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
 import { ImageResponse } from 'next/og';

@@ -2,7 +2,7 @@
  * DAY.tsx
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * Use this file as an example for how to best use SVG's throughout your app.
  * Copy paste the contents of an SVG into JSX and prop spread through any props
@@ -14,7 +14,7 @@
  * You should now have a great SVG to use across your app.
  */
 
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export default function DAY({ ...props }: SVGProps<SVGSVGElement>) {
   return (

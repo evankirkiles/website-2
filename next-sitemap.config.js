@@ -2,7 +2,7 @@
  * next-sitemap.config.js
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
 /** @type {import('next-sitemap').IConfig} */

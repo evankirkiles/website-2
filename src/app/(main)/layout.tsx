@@ -2,7 +2,7 @@
  * layout.tsx
  * Author: evan kirkiles
  * Created On Mon Aug 28 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * A basic layout template for you to use as you implement components.
  */

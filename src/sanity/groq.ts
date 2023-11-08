@@ -2,7 +2,7 @@
  * groq.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * Define any shared GROQs you'll have to use here. These can get quite huge
  * with a lot of references to expand.

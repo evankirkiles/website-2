@@ -2,7 +2,7 @@
  * earlyScripts.tsx
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * Defines "early scripts", which are inlined scripts to run before any Next.js
  * code is loaded. Their placement at the top of the HTML document allows them

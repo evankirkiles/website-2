@@ -2,7 +2,7 @@
  * CC.tsx
  * Author: Evan Kirkiles
  * Created On Sun Oct 01 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
 import { SVGProps } from 'react';

@@ -2,7 +2,7 @@
  * index.tsx
  * Author: Evan Kirkiles
  * Created On Sun Oct 01 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 import Link from 'next/link';
 import s from './Header.module.scss';
@@ -19,13 +19,13 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink href="/art">Art</NavLink>
-          </li>
-          <li>
             <NavLink href="/software">Software</NavLink>
           </li>
           <li>
             <NavLink href="/design">Design</NavLink>
+          </li>
+          <li>
+            <NavLink href="/art">Art</NavLink>
           </li>
           <li>
             <NavLink href="/about">About</NavLink>

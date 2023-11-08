@@ -2,7 +2,7 @@
  * sanity.config.ts
  * Author: evan kirkiles
  * Created On Mon Aug 28 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
 import { defineConfig, isDev } from 'sanity';

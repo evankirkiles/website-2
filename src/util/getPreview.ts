@@ -2,11 +2,11 @@
  * getPreview.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
-import { draftMode } from "next/headers";
-import { SANITY_API_READ_TOKEN } from "@/env";
+import { draftMode } from 'next/headers';
+import { SANITY_API_READ_TOKEN } from '@/env';
 
 /**
  * If draft mode is enabled, returns an object with the Sanity API read token.

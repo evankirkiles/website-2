@@ -2,7 +2,7 @@
  * util.ts
  * Author: evan kirkiles
  * Created On Mon Aug 28 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * This function defines how we revalidate Next.js tags from pages in different
  * browsers. It's a bit of a hack to get around the propagation time that exists

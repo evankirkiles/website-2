@@ -2,7 +2,7 @@
   "editor.formatOnSave": true,
   "fileHeaderComment.parameter": {
     "*": {
-      "company": "Design at Yale"
+      "company": "Digital Portfolio"
     }
   },
   "fileHeaderComment.template": {

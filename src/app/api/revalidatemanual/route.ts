@@ -2,7 +2,7 @@
  * route.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * THIS IS AN UNSAFE  MANUAL REVALIDATION ROUTE. It is used locally to invalidate
  * the dev Next.js Data cache, as we can't use webhooks there. This allows

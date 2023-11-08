@@ -2,7 +2,7 @@
  * index.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * A place to define + export next/localFonts. Place the actual font files in
  * subdirectories here. Read more here:

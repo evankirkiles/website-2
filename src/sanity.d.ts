@@ -2,7 +2,7 @@
  * sanity.d.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * Adds support for getting the altText of an image, which is set from
  * the Sanity media plugin.

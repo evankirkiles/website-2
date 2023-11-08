@@ -2,7 +2,7 @@
  * sanity.cli.ts
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * Configuration passed to the Sanity CLI, works once you fill our your .env.local.
  */

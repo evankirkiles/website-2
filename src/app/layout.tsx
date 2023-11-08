@@ -2,7 +2,7 @@
  * layout.tsx
  * Author: evan kirkiles
  * Created On Sun Aug 27 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 
 import type { Metadata } from 'next';

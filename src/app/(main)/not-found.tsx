@@ -2,7 +2,7 @@
  * not-found.tsx
  * Author: evan kirkiles
  * Created On Fri Sep 01 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  */
 import { ColorSchemeScript } from '@/util/earlyScripts';
 import s from './NotFound.module.scss';

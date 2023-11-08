@@ -2,7 +2,7 @@
  * route.ts
  * Author: Evan Kirkiles
  * Created On Fri Oct 13 2023
- * 2023 Design at Yale
+ * 2023 Digital Portfolio
  *
  * BACKGROUND:
  * https://github.com/evankirkiles/nextjs-broken-data-cache-demo
