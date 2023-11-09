@@ -9,7 +9,7 @@ import components from '@/components/PortableText';
 import { PeCopy } from '@/sanity/schema';
 import { PortableText } from '@portabletext/react';
 
-export default function Copy({ value }: { value: PeCopy }) {
+export default function PageCopy({ value }: { value: PeCopy }) {
   const contents = (
     <PortableText value={value.content ?? []} components={components} />
   );

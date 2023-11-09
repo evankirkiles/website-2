@@ -5,8 +5,19 @@
  * 2023 Digital Portfolio
  */
 
+import PageColumns from '@/components/PageBuilder/PageColumns';
+import PageCopy from '@/components/PageBuilder/PageCopy';
+import PageSpacer from '@/components/PageBuilder/PageSpacer';
 import { SitePage } from '@/sanity/schema';
-import Copy from './Copy';
+
+type PageElementBlock = NonNullable<SitePage['pageBuilder']>[0];
+type PageElementType = PageElementBlock['_type'];
+
+const PAGE_ELEMENT_MAP = {
+  pe_copy: PageCopy,
+  pe_columns: PageColumns,
+  pe_spacer: PageSpacer,
+} as const satisfies Record<PageElementType, unknown>;
 
 interface PageBuilderProps {
   content: SitePage['pageBuilder'];
@@ -22,9 +33,8 @@ interface PageBuilderProps {
 export default function PageBuilder({ content, isPreview }: PageBuilderProps) {
   if (!content) return null;
   return content.map((pageBlock) => {
-    switch (pageBlock._type) {
-      case 'pe_copy':
-        return <Copy key={pageBlock._key} value={pageBlock} />;
-    }
+    const Component = PAGE_ELEMENT_MAP[pageBlock._type];
+    // @ts-ignore Discriminated union not worth the trouble
+    return <Component key={pageBlock._key} value={pageBlock} />;
   });
 }

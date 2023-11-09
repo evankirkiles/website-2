@@ -13,6 +13,7 @@ export { metadata } from 'next-sanity/studio/metadata';
 export default function StudioPage() {
   return (
     <main
+      data-sanity="true"
       style={{
         gridRowStart: 'main',
         gridColumnStart: 'main',

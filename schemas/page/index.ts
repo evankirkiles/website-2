@@ -8,8 +8,10 @@
  * below array to enable them in the SitePage document page builder type. This
  * will also automatically add them to the Sanity schema.
  */
+import ColumnsType from './ColumnsType';
 import CopyType from './CopyType';
+import SpacerType from './SpacerType';
 
-const pageElements = [CopyType];
+const pageElements = [CopyType, ColumnsType, SpacerType];
 
 export default pageElements;

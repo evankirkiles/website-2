@@ -63,6 +63,11 @@ body {
   min-height: 100svh;
   padding: 0 var(--page-padding);
 
+  &:has(main[data-sanity='true']) {
+    padding: 0;
+    gap: 0;
+  }
+
   @include media('md') {
     grid-template:
       'header header' auto

@@ -43,13 +43,13 @@ export async function revalidateItem({
       .commit();
     toast?.push({
       status: 'success',
-      title: `Revalidated ${tags}.`,
+      title: `Revalidated: ${tags}`,
     });
   } catch (e) {
     console.error(e);
     toast?.push({
       status: 'error',
-      title: `Failed revalidation of ${tags}`,
+      title: `Failed revalidation: ${tags}`,
     });
   }
 }

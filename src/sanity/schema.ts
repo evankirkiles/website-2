@@ -63,7 +63,9 @@ export interface SitePage extends SanityDocument {
    *
    * Assemble your page using configurable modules.
    */
-  pageBuilder?: Array<SanityKeyed<PeCopy>>;
+  pageBuilder?: Array<
+    SanityKeyed<PeCopy> | SanityKeyed<PeColumns> | SanityKeyed<PeSpacer>
+  >;
 
   /**
    * SEO Title — `string`
@@ -149,7 +151,9 @@ export interface Software extends SanityDocument {
    *
    * The event's page on the DAY site.
    */
-  pageBuilder?: Array<SanityKeyed<PeCopy>>;
+  pageBuilder?: Array<
+    SanityKeyed<PeCopy> | SanityKeyed<PeColumns> | SanityKeyed<PeSpacer>
+  >;
 
   /**
    * Last Revalidated — `datetime`
@@ -174,6 +178,47 @@ export type PeCopy = {
    * How many evenly-spaced columns to break the text into. Default 1.
    */
   columns: number;
+};
+
+export type PeColumns = {
+  _type: "pe_columns";
+  /**
+   * Equally space? — `boolean`
+   *
+   *
+   */
+  justification?: boolean;
+
+  /**
+   * First Column — `array`
+   *
+   *
+   */
+  content_1: Array<SanityKeyed<PeCopy>>;
+
+  /**
+   * Second Column (Optional) — `array`
+   *
+   *
+   */
+  content_2?: Array<SanityKeyed<PeCopy>>;
+
+  /**
+   * Third Column (Optional) — `array`
+   *
+   *
+   */
+  content_3?: Array<SanityKeyed<PeCopy>>;
+};
+
+export type PeSpacer = {
+  _type: "pe_spacer";
+  /**
+   * placeholder — `boolean`
+   *
+   *
+   */
+  placeholder?: boolean;
 };
 
 export type Documents = SitePage | Software;
