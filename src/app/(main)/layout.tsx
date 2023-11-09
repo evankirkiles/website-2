@@ -8,7 +8,6 @@
  */
 
 import Header from '@/app/(main)/_components/Header';
-import SkipLink from '@/components/SkipLink';
 import { PropsWithChildren } from 'react';
 import Footer from '@/app/(main)/_components/Footer';
 import s from './Layout.module.scss';

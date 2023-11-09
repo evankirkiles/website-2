@@ -16,6 +16,10 @@ export default function RoomSVG(props: HTMLProps<SVGSVGElement>) {
       preserveAspectRatio="none"
       {...props}
     >
+      <title>
+        A perspective view of a gallery-like room with three walls and two
+        benches.
+      </title>
       <line
         y1="-0.5"
         x2="2296.73"

@@ -15,7 +15,12 @@ export const pagesQuery = groq`*[_type == "site_page" && path.current != "."] {
 }`;
 
 export const pageQuery = groq`*[_type == "site_page" && path.current == $path][0] {
-  _id, title, pageBuilder[] {
+  _id, 
+  title,
+  path {
+    current
+  }, 
+  pageBuilder[] {
     ...,
   }
 }`;

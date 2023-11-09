@@ -35,6 +35,12 @@
 
   // a maximum width to use for main page content
   --max-main-width: 68ch;
+  @include media('md') {
+    --max-main-width: 52ch;
+  }
+  @include media('xl') {
+    --max-main-width: 68ch;
+  }
 }
 
 /* -------------------------------------------------------------------------- */

@@ -11,11 +11,11 @@ import PreviewProvider from '@/components/PreviewProvider';
 import getClient from '@/sanity/client';
 import { pageQuery, pagesQuery } from '@/sanity/groq';
 import { PeCopy, SanityKeyed, SitePage } from '@/sanity/schema';
+import generateMetadataForPage from '@/util/generateMetadata';
 import getPreview from '@/util/getPreview';
 import { toPlainText } from '@portabletext/react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import METADATA from '@/app/metadata';
 
 /* ---------------------------- Param generation ---------------------------- */
 
@@ -78,40 +78,5 @@ export async function generateMetadata({ params: { pageSlug } }: PageProps) {
     next: { tags: [`page${params.path}`] },
   });
   if (!page) return {};
-
-  // create metadata titles
-  const title = `${page.seo_title || page.title} | ${METADATA.title}`;
-  const OGTitle = `${page.seo_title || page.title} | ${METADATA.title}`;
-
-  // parse page body into a description if no description provided
-  const descriptionUF =
-    page.seo_description ||
-    page.pageBuilder
-      ?.filter(
-        (pageEl): pageEl is SanityKeyed<PeCopy> => pageEl._type === 'pe_copy'
-      )
-      .map(({ content }) => toPlainText(content ?? []))
-      .join(' ');
-  const description =
-    descriptionUF && descriptionUF.length > 152
-      ? descriptionUF.substring(0, 152) + '...'
-      : descriptionUF;
-
-  const metadata: Metadata = {
-    title,
-    description,
-    keywords: page.seo_keywords,
-    openGraph: {
-      title: OGTitle,
-      description,
-      url: params.path.replace('.', '/'),
-    },
-    twitter: {
-      title,
-      description,
-      site: params.path.replace('.', '/'),
-    },
-  };
-
-  return metadata;
+  return generateMetadataForPage(page);
 }

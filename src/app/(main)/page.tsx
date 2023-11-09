@@ -5,13 +5,13 @@
  * 2023 Digital Portfolio
  */
 
-import SVGLines from '@/assets/svg/lines';
 import PageBuilder from '@/components/PageBuilder';
 import PreviewPageBuilder from '@/components/PageBuilder/preview';
 import PreviewProvider from '@/components/PreviewProvider';
 import getClient from '@/sanity/client';
 import { pageQuery } from '@/sanity/groq';
 import { SitePage } from '@/sanity/schema';
+import generateMetadataForPage from '@/util/generateMetadata';
 import getPreview from '@/util/getPreview';
 
 /* -------------------------------------------------------------------------- */
@@ -23,19 +23,11 @@ export default async function Page() {
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     { path: '.' },
-    { next: { tags: [`page.`] } }
+    { next: { tags: [`page.`] }, cache: 'no-store' }
   );
 
   return (
     <article>
-      {/* <SVGLines /> */}
-      {/* <p>
-        Evan Kirkiles is a software engineer and designer, and maybe an artist.
-        He is making simple things that live, work, and tell stories on their
-        own. He has previously worked with Channel Studio and the New York Times.
-        His site installations have been shown in the Yale CCAM.
-      </p>
-      <p>He is currently looking for new grad software engineering roles.</p> */}
       {preview && preview.token ? (
         <PreviewProvider token={preview.token}>
           <PreviewPageBuilder
@@ -45,10 +37,20 @@ export default async function Page() {
           />
         </PreviewProvider>
       ) : (
-        <PageBuilder content={page?.pageBuilder} />
+        <PageBuilder content={page!.pageBuilder} />
       )}
     </article>
   );
 }
 
 export const revalidate = false;
+
+// generate the metadata for the page.
+export async function generateMetadata() {
+  const params = { path: `.` };
+  const page: SitePage | null = await getClient().fetch(pageQuery, params, {
+    next: { tags: [`page${params.path}`] },
+  });
+  if (!page) return {};
+  return generateMetadataForPage(page);
+}
