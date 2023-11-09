@@ -11,7 +11,7 @@ import NavLink from '@/app/(main)/_components/Header/NavLink';
 
 export default function Header() {
   return (
-    <header className={s.container2}>
+    <header className={s.container}>
       <SkipLink />
       <p>
         <NavLink href="/">Evan Kirkiles</NavLink>

@@ -34,7 +34,7 @@
   }
 
   // a maximum width to use for main page content
-  --max-main-width: 62ch;
+  --max-main-width: 68ch;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -52,12 +52,23 @@ body {
 
 body {
   display: grid;
+  column-gap: var(--page-padding);
+  row-gap: 0.5em;
   grid-template:
     'header' auto
     'main' 1fr
+    'sidebar' auto
     'footer' auto / 1fr;
   width: 100%;
   min-height: 100svh;
+  padding: 0 var(--page-padding);
+
+  @include media('md') {
+    grid-template:
+      'header header' auto
+      'main sidebar' 1fr
+      'footer footer' auto / max-content 1fr;
+  }
 
   // &::after {
   //   position: fixed;

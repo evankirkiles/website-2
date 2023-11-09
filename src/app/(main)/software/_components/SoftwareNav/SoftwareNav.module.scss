@@ -1,0 +1,37 @@
+/*
+ * SoftwareNav.module.scss
+ * Author: Evan Kirkiles
+ * Created On Wed Nov 08 2023
+ * 2023 Digital Portfolio 
+ */
+@import '@/styles/utils';
+
+.container {
+  width: 100%;
+
+  @include media('md') {
+    width: 60ch;
+  }
+
+  & table {
+    width: 100%;
+
+    & td:first-of-type {
+      width: 100%;
+    }
+  }
+
+  & caption {
+    padding-top: 0.5em;
+    font-size: 0.75em;
+    opacity: 0.3;
+  }
+
+  & td[colspan='2'] {
+    font-weight: 700;
+  }
+
+  & tr:not(:first-of-type) td[colspan='2'] {
+    padding-top: 1.5em;
+  }
+}

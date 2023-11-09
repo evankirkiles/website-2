@@ -14,6 +14,7 @@ import Footer from '@/app/(main)/_components/Footer';
 import s from './Layout.module.scss';
 import Script from 'next/script';
 import { GA4_TAG } from '@/env';
+import RoomSVG from '@/app/(main)/_components/RoomSVG';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -35,6 +36,9 @@ export default function Layout({ children }: PropsWithChildren) {
       <main className={s.main} tabIndex={-1}>
         {children}
       </main>
+      <aside className={s.sidebar}>
+        <RoomSVG className={s.sidebar_image} />
+      </aside>
       <Footer />
     </>
   );

@@ -12,7 +12,14 @@ export { metadata } from 'next-sanity/studio/metadata';
 
 export default function StudioPage() {
   return (
-    <main style={{ gridArea: 'main' }}>
+    <main
+      style={{
+        gridRowStart: 'main',
+        gridColumnStart: 'main',
+        gridColumnEnd: 'sidebar',
+        gridRowEnd: 'sidebar',
+      }}
+    >
       <Studio />
     </main>
   );

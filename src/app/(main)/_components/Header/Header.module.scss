@@ -10,48 +10,9 @@
   position: sticky;
   top: 0;
   grid-area: header;
-  width: calc(100vw - 2 * var(--page-padding));
-  // max-width: var(--max-main-width);
-  margin: 0 auto;
-  padding-top: var(--page-padding);
-
-  & p {
-    width: min-content;
-    height: 5rem;
-    margin-right: 1rem;
-    margin-bottom: 0;
-    float: left;
-    // font-weight: 700;
-    font-size: 2.6em;
-    line-height: 1;
-    // border: 1px solid black;
-    // background-color: theme-color('content');
-  }
-
-  & hr {
-    grid-area: hr;
-    margin-top: 1em;
-  }
-
-  // & ul {
-  //   display: flex;
-  //   flex-direction: row;
-  //   gap: 0.8em;
-  // }
-
-  & li {
-    margin: 0;
-  }
-}
-
-.container2 {
-  position: sticky;
-  top: 0;
-  grid-area: header;
-  width: calc(100vw - 2 * var(--page-padding));
-  margin: 0 auto;
-  margin-bottom: 0.5em;
-  padding-top: var(--page-padding);
+  width: 100%;
+  padding: var(--page-padding) 0;
+  padding-bottom: 0;
   background-color: theme-color('background');
 
   &::after {
@@ -87,7 +48,6 @@
       margin-left: -0.2em;
       padding: 0 0.2em;
       text-underline-offset: 0.15em;
-      transition: opacity 0.2s ease-in-out;
 
       &[aria-current='page'] {
         // text-decoration: underline;
