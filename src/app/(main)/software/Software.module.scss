@@ -44,9 +44,12 @@
 
   & a {
     opacity: 1;
-    &:hover {
-      // color: theme-color('content');
-      opacity: 0.6;
+
+    @media (hover: hover) {
+      &:hover {
+        // color: theme-color('content');
+        opacity: 0.6;
+      }
     }
   }
 

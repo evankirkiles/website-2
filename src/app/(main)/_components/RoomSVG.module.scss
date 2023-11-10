@@ -1,0 +1,41 @@
+/*
+ * RoomSVG.module.scss
+ * Author: Evan Kirkiles
+ * Created On Fri Nov 10 2023
+ * 2023 Digital Portfolio 
+ */
+@import '@/styles/utils';
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  & *[data-mask='true'] {
+    fill: theme-color('background');
+    pointer-events: none;
+  }
+
+  & polygon {
+    fill: theme-color('content');
+    opacity: 0;
+  }
+
+  & a:hover polygon,
+  & a:focus-visible polygon {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  & a[aria-current='page'] polygon {
+    fill: theme-color('background2');
+    opacity: 1;
+  }
+}
+
+.label {
+  -webkit-text-stroke: 1px theme-color('content');
+  position: absolute;
+  color: theme-color('background');
+  font-size: 4vh;
+  pointer-events: none;
+}

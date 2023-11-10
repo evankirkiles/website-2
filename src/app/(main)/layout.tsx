@@ -35,7 +35,7 @@ export default function Layout({ children }: PropsWithChildren) {
       <main className={s.main} tabIndex={-1}>
         {children}
         <aside className={s.sidebar}>
-          <RoomSVG className={s.sidebar_image} />
+          <RoomSVG />
         </aside>
       </main>
       <Footer />

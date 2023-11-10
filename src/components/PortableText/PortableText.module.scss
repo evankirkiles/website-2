@@ -34,7 +34,9 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 
-  &:hover {
-    color: theme-color('content3');
+  @media (hover: hover) {
+    &:hover {
+      color: theme-color('content3');
+    }
   }
 }

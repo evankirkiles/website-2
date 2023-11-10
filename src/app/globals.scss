@@ -112,7 +112,9 @@ li {
 }
 
 a {
-  &:hover {
-    color: theme-color('content2');
+  @media (hover: hover) {
+    &:hover {
+      color: theme-color('content2');
+    }
   }
 }

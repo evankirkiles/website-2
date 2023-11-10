@@ -12,10 +12,11 @@
   position: fixed;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   inset: 0;
+  padding-top: calc(var(--header-height) + 4em);
   gap: 0.5em;
   pointer-events: none;
 
@@ -27,8 +28,10 @@
     white-space: nowrap;
     pointer-events: all;
 
-    &:hover {
-      background-color: theme-color('background2');
+    @media (hover: hover) {
+      &:hover {
+        background-color: theme-color('background2');
+      }
     }
   }
 }
