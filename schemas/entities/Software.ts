@@ -14,10 +14,6 @@ const Software = defineType({
   type: 'document',
   title: 'Software',
   icon: FiHardDrive,
-  groups: [
-    { name: 'information', title: 'Information', default: true },
-    { name: 'page', title: 'Page' },
-  ],
   fields: [
     defineField({
       name: 'short_title',
@@ -25,14 +21,12 @@ const Software = defineType({
       title: 'Short Title',
       validation: (Rule) => Rule.required(),
       codegen: { required: true },
-      group: 'information',
       description: 'A short title for the table view of the software.',
     }),
     defineField({
       name: 'link',
       type: 'url' as const,
       title: 'Link',
-      group: 'information',
       description: 'A link to a page for the software.',
     }),
     defineField({
@@ -40,7 +34,6 @@ const Software = defineType({
       type: 'date' as const,
       title: 'Date',
       description: 'When was this software created?',
-      group: 'information',
       options: {
         dateFormat: 'dddd, MMMM Do YYYY,',
       },
@@ -51,53 +44,26 @@ const Software = defineType({
       title: 'Group',
       validation: (Rule) => Rule.required(),
       codegen: { required: true },
-      group: 'information',
       description: 'A group for the software.',
+    }),
+    defineField({
+      name: 'under_development',
+      type: 'boolean' as const,
+      title: 'Under development?',
+      description: 'Is the software under development?.',
+      validation: (Rule) => Rule.required(),
+      codegen: { required: true },
+      initialValue: false,
     }),
 
     /* ---------------------------------- Page ---------------------------------- */
 
     defineField({
-      name: 'title',
-      type: 'string' as const,
-      title: 'Title',
-      validation: (Rule) => Rule.required(),
-      codegen: { required: true },
-      group: 'page',
-      description: 'The title of the software.',
-    }),
-    defineField({
-      name: 'slug',
-      type: 'slug' as const,
-      title: 'Slug',
-      group: 'page',
-      description: "(Optional) A slug for the software's page on the site.",
-    }),
-    defineField({
-      name: 'pageBuilder',
-      type: 'array' as const,
-      title: 'Page Builder',
-      group: 'page',
-      description: "The event's page on the DAY site.",
-      // map all of our page elements to pageBuilder sub-types
-      of: pageElements.map(({ title, name }) =>
-        defineArrayMember({
-          title,
-          type: name,
-        })
-      ),
-    }),
-    defineField({
-      name: 'last_revalidated',
-      type: 'datetime' as const,
-      title: 'Last Revalidated',
-      description:
-        'When this page was last revalidated. Re-publish or manually revalidate to change.',
-      readOnly: true,
-      options: {
-        dateFormat: 'dddd, MMMM Do YYYY,',
-        timeFormat: 'h:mm A',
-      },
+      name: 'page',
+      type: 'reference' as const,
+      title: 'Page',
+      description: 'An optional page for the software.',
+      to: [{ type: 'site_page' }],
     }),
   ],
   preview: {

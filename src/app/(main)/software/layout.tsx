@@ -14,7 +14,12 @@ import s from './Software.module.scss';
 import SoftwareNav from '@/app/(main)/software/_components/SoftwareNav';
 
 const softwareQuery = groq`*[_type == "software"] {
-  ...
+  ...,
+  page -> {
+    path {
+      current
+    }
+  }
 }`;
 
 export default async function SoftwareLayout({ children }: PropsWithChildren) {
