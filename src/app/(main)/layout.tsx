@@ -34,10 +34,10 @@ export default function Layout({ children }: PropsWithChildren) {
       <Header />
       <main className={s.main} tabIndex={-1}>
         {children}
+        <aside className={s.sidebar}>
+          <RoomSVG className={s.sidebar_image} />
+        </aside>
       </main>
-      <aside className={s.sidebar}>
-        <RoomSVG className={s.sidebar_image} />
-      </aside>
       <Footer />
     </>
   );

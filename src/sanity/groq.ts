@@ -35,3 +35,16 @@ export const softwarePageQuery = groq`*[_type == "software" && slug.current == $
     ...,
   }
 }`;
+
+export const softwaresQuery = groq`*[_type == "software"] {
+  ...,
+  picture {
+    ...,
+    asset ->
+  },
+  page -> {
+    path {
+      current
+    }
+  }
+}`;

@@ -7,10 +7,12 @@
 @import '@/styles/utils';
 
 .container {
+  z-index: zIndex('high');
   position: sticky;
   top: 0;
   grid-area: header;
   width: 100%;
+  height: var(--header-height);
   padding: var(--page-padding) 0;
   padding-bottom: 0;
   background-color: theme-color('background');

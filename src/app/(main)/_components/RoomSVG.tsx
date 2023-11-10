@@ -5,6 +5,7 @@
  * 2023 Digital Portfolio
  */
 
+import Link from 'next/link';
 import { HTMLProps } from 'react';
 
 export default function RoomSVG(props: HTMLProps<SVGSVGElement>) {
@@ -20,49 +21,64 @@ export default function RoomSVG(props: HTMLProps<SVGSVGElement>) {
         A perspective view of a gallery-like room with three walls and two
         benches.
       </title>
-      <line
-        y1="-0.5"
-        x2="2296.73"
-        y2="-0.5"
-        transform="matrix(0.930889 0.365302 -0.565711 0.824603 1 1)"
-        stroke="currentColor"
+      <Link href="/software">
+        <polygon
+          points="0.000 840.500, 0.000 0.000, 739.000 291.500, 739.000 551.500, 0.000 840.500"
+          fill="transparent"
+          vectorEffect="non-scaling-stroke"
+        />
+      </Link>
+      <Link href="/design">
+        <polygon
+          points="1400.710 291.500, 739.289 291.500, 739.289 551.500, 1400.710 551.500, 1400.710 291.500"
+          fill="transparent"
+          vectorEffect="non-scaling-stroke"
+        />
+      </Link>
+      <Link href="/art">
+        <polygon
+          points="2139.500 840.500, 2139.500 0.000, 1400.500 291.500, 1400.500 551.500, 2139.500 840.500"
+          fill="transparent"
+          vectorEffect="non-scaling-stroke"
+        />
+      </Link>
+      <path
+        d="M2139.5 0L1400.5 291.5V551.5L2139.5 840.5"
+        stroke="white"
         vectorEffect="non-scaling-stroke"
       />
-      <line
-        y1="-0.5"
-        x2="2296.73"
-        y2="-0.5"
-        transform="matrix(-0.930889 0.365302 0.565711 0.824603 2139 1)"
-        stroke="currentColor"
+      <path
+        d="M1400.71 291.5H739.289V551.5H1400.71V291.5Z"
+        stroke="white"
         vectorEffect="non-scaling-stroke"
       />
-      <rect
-        x="739.289"
-        y="291.5"
-        width="661.423"
-        height="260"
-        data-mask="true"
-        stroke="currentColor"
+      <path
+        d="M0 0L739 291.5V551.5L0 840.5"
+        stroke="white"
         vectorEffect="non-scaling-stroke"
       />
       <path
         d="M139.831 626.5V198L467.737 319.5V528.5L139.831 626.5Z"
-        stroke="currentColor"
+        stroke="white"
+        data-mask="true"
         vectorEffect="non-scaling-stroke"
       />
       <path
         d="M2072.89 685V139L1655.07 293.817V560.127L2072.89 685Z"
-        stroke="currentColor"
+        stroke="white"
         vectorEffect="non-scaling-stroke"
+        data-mask="true"
       />
       <path
         d="M530.541 504.5V328L685.239 373V469.5L530.541 504.5Z"
-        stroke="currentColor"
+        stroke="white"
+        data-mask="true"
         vectorEffect="non-scaling-stroke"
       />
       <path
         d="M1453.44 508V339.5L1550.62 309.5V538.5L1453.44 508Z"
-        stroke="currentColor"
+        stroke="white"
+        data-mask="true"
         vectorEffect="non-scaling-stroke"
       />
       <path
@@ -71,18 +87,36 @@ export default function RoomSVG(props: HTMLProps<SVGSVGElement>) {
         vectorEffect="non-scaling-stroke"
       />
       <path
-        d="M420.137 692.5L785.065 532.5H892.824M420.137 692.5H642.267M420.137 692.5V817H642.267M642.267 692.5L892.824 532.5M642.267 692.5V817M892.824 532.5V626L642.267 817"
-        stroke="currentColor"
+        d="M420.137 692.5L785.065 532.5H892.824M420.137 692.5H642.267M420.137 692.5V817H642.267M892.824 532.5L642.267 692.5M892.824 532.5V626L642.267 817M642.267 692.5V817"
+        stroke="white"
         vectorEffect="non-scaling-stroke"
       />
       <path
-        d="M1690.11 692.5L1325.18 532.5H1217.43V626L1467.98 817H1690.11V692.5Z"
+        d="M1718.69 692L1353.76 532H1246V625.5L1496.56 816.5H1718.69V692Z"
         data-mask="true"
         vectorEffect="non-scaling-stroke"
       />
       <path
-        d="M1690.11 692.5L1325.18 532.5H1217.43M1690.11 692.5H1467.98M1690.11 692.5V817H1467.98M1467.98 692.5L1217.43 532.5M1467.98 692.5V817M1217.43 532.5V626L1467.98 817"
-        stroke="currentColor"
+        d="M1718.69 692L1353.76 532H1246M1718.69 692H1496.56M1718.69 692V816.5H1496.56M1246 532L1496.56 692M1246 532V625.5L1496.56 816.5M1496.56 692V816.5"
+        stroke="white"
+        vectorEffect="non-scaling-stroke"
+      />
+      <rect
+        x="774.5"
+        y="328.5"
+        width="211"
+        height="148"
+        stroke="white"
+        data-mask="true"
+        vectorEffect="non-scaling-stroke"
+      />
+      <rect
+        x="1010.5"
+        y="328.5"
+        width="211"
+        height="148"
+        stroke="white"
+        data-mask="true"
         vectorEffect="non-scaling-stroke"
       />
     </svg>

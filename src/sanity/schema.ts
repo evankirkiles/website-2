@@ -133,34 +133,30 @@ export interface Software extends SanityDocument {
   group: string;
 
   /**
-   * Title — `string`
+   * Preview Picture — `image`
    *
-   * The title of the software.
+   * A distorted preview image to use. Should be in about a 3:2 aspect ratio.
    */
-  title: string;
+  picture?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
   /**
-   * Slug — `slug`
+   * Under development? — `boolean`
    *
-   * (Optional) A slug for the software's page on the site.
+   * Is the software under development?.
    */
-  slug?: { _type: "slug"; current: string };
+  under_development: boolean;
 
   /**
-   * Page Builder — `array`
+   * Page — `reference`
    *
-   * The event's page on the DAY site.
+   * An optional page for the software.
    */
-  pageBuilder?: Array<
-    SanityKeyed<PeCopy> | SanityKeyed<PeColumns> | SanityKeyed<PeSpacer>
-  >;
-
-  /**
-   * Last Revalidated — `datetime`
-   *
-   * When this page was last revalidated. Re-publish or manually revalidate to change.
-   */
-  last_revalidated?: string;
+  page?: SanityReference<SitePage>;
 }
 
 export type PeCopy = {

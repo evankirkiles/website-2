@@ -7,10 +7,18 @@
 @import '@/styles/utils';
 
 .container {
-  width: 100%;
+  flex: 1;
 
   @include media('md') {
-    width: 60ch;
+    flex-shrink: 0;
+    min-width: 30ch;
+    max-width: 30ch;
+  }
+
+  @include media('md') {
+    position: sticky;
+    top: calc(var(--header-height) + 0.5em);
+    max-height: calc(100dvh - var(--header-height) - var(--footer-height) - 2em);
   }
 
   & table {

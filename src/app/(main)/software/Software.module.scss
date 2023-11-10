@@ -4,15 +4,49 @@
  * Created On Wed Nov 08 2023
  * 2023 Digital Portfolio 
  */
+@import '@/styles/utils';
+
+.article {
+  max-width: unset !important;
+
+  @include media('md') {
+    max-width: var(--max-main-width);
+  }
+}
 
 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   width: 100%;
 
-  & table {
-    width: 100%;
+  // @include media('md') {
+  //   min-width: 500px;
+  // }
 
-    & td:first-of-type {
+  @include media('lg') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  & li {
+    width: 100%;
+    margin: 0;
+
+    & img {
       width: 100%;
+      margin-bottom: -3%;
     }
+
+    & small {
+      padding: 0 1em;
+      font-size: 0.75em;
+    }
+  }
+
+  & a img {
+    mix-blend-mode: lighten;
+  }
+
+  & a:hover img {
+    opacity: 0.5;
   }
 }

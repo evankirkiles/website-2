@@ -27,12 +27,17 @@ export default function SoftwareNav({ groups }: SoftwareNavProps) {
                 <tr>
                   <td colSpan={2}>{group}</td>
                 </tr>
-                {softwares.map(({ _id, short_title, date }) => (
-                  <tr key={_id}>
-                    <td>{short_title}</td>
-                    <td>{date && new Date(date).getFullYear()}</td>
-                  </tr>
-                ))}
+                {softwares.map(
+                  ({ _id, short_title, date, under_development }) => (
+                    <tr key={_id}>
+                      <td>
+                        {short_title}
+                        {under_development && '*'}
+                      </td>
+                      <td>{date && new Date(date).getFullYear()}</td>
+                    </tr>
+                  )
+                )}
               </React.Fragment>
             ))}
         </tbody>

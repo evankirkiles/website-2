@@ -12,20 +12,12 @@ import { groq } from 'next-sanity';
 import React, { PropsWithChildren } from 'react';
 import s from './Software.module.scss';
 import SoftwareNav from '@/app/(main)/software/_components/SoftwareNav';
-
-const softwareQuery = groq`*[_type == "software"] {
-  ...,
-  page -> {
-    path {
-      current
-    }
-  }
-}`;
+import { softwaresQuery } from '@/sanity/groq';
 
 export default async function SoftwareLayout({ children }: PropsWithChildren) {
   const preview = getPreview();
   const software: Software[] = await getClient(preview).fetch(
-    softwareQuery,
+    softwaresQuery,
     undefined,
     {
       next: { tags: [`software`] },

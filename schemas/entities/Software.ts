@@ -47,6 +47,16 @@ const Software = defineType({
       description: 'A group for the software.',
     }),
     defineField({
+      name: 'picture',
+      type: 'image' as const,
+      title: 'Preview Picture',
+      description:
+        'A distorted preview image to use. Should be in about a 3:2 aspect ratio.',
+      options: {
+        metadata: ['lqip'],
+      },
+    }),
+    defineField({
       name: 'under_development',
       type: 'boolean' as const,
       title: 'Under development?',
@@ -68,8 +78,9 @@ const Software = defineType({
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'short_title',
+      title: 'short_title',
+      subtitle: 'group',
+      media: 'picture',
     },
   },
 });

@@ -16,14 +16,23 @@
 
   @include media('md') {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   & article {
-    // display: flex;
-    // flex-direction: column;
-    max-width: var(--max-main-width);
-    min-height: 100%;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
     animation: fade-up 0.3s ease-in-out;
+
+    @include media('lg') {
+      min-width: 500px;
+      max-width: var(--max-main-width);
+    }
+
+    @include media('xl') {
+      min-width: var(--max-main-width);
+    }
   }
 
   & p {
@@ -32,10 +41,16 @@
 }
 
 .sidebar {
-  position: sticky;
+  z-index: 0;
   grid-area: sidebar;
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  min-width: min(300px, 100%);
+
+  @include media('md') {
+    position: sticky;
+    top: calc(var(--header-height) + 0.5em);
+    max-height: calc(100dvh - var(--header-height) - var(--footer-height) - 2em);
+  }
 
   &_image {
     width: 100%;
@@ -43,10 +58,16 @@
 
     & *[data-mask='true'] {
       fill: theme-color('background');
+      pointer-events: none;
     }
 
-    & rect:hover {
-      fill: white;
+    & polygon {
+      transition: fill 0.1s ease-in-out;
+    }
+
+    & a:hover polygon,
+    & a:focus-visible polygon {
+      fill: theme-color('background2');
       cursor: pointer;
     }
   }
