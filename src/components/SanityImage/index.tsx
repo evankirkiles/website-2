@@ -17,11 +17,12 @@ interface SanityImageProps
 }
 
 export default function SanityImage({ image, ...props }: SanityImageProps) {
-  const imageProps = useNextSanityImage(getClient(), image);
+  const imageProps = useNextSanityImage(getClient(), image, {});
   return (
     <Image
       {...imageProps}
       alt={image.altText || 'No alt text provided.'}
+      // sizes="(max-width: 800w) 800w"
       placeholder="blur"
       blurDataURL={image.metadata.lqip}
       {...props}

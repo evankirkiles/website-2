@@ -20,19 +20,22 @@ export default async function Image() {
       <div
         style={{
           fontFamily: 'Arial',
-          fontSize: 72,
+          fontSize: 180,
           background: 'black',
           color: 'white',
           width: '100%',
           height: '100%',
-          paddingTop: '1%',
+          // paddingTop: '1%',
           display: 'flex',
           flexDirection: 'column',
-          padding: '3rem',
+          alignItems: 'center',
+          justifyContent: 'center',
+          // padding: '3rem',
           fontWeight: '700',
         }}
       >
-        <div
+        <div>EWK</div>
+        {/* <div
           style={{
             display: 'flex',
             position: 'relative',
@@ -74,7 +77,7 @@ export default async function Image() {
               border: '1px solid white',
             }}
           ></div>
-        </div>
+        </div> */}
       </div>
     ),
     {

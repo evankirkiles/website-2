@@ -9,30 +9,45 @@
 .container {
   flex: 1;
 
+  @include media('sm-down') {
+    display: contents;
+  }
+
   @include media('md') {
     flex-shrink: 0;
     min-width: 30ch;
     max-width: 30ch;
   }
 
-  @include media('md') {
-    position: sticky;
-    top: calc(var(--header-height) + 0.5em);
-    max-height: calc(100dvh - var(--header-height) - var(--footer-height) - 2em);
-  }
-
-  & table {
+  &_inner {
     width: 100%;
 
-    & td:first-of-type {
-      width: 100%;
+    @include media('sm-down') {
+      display: contents;
     }
+
+    @include media('md') {
+      position: sticky;
+      top: calc(var(--header-height) + 0.5em);
+      max-height: calc(
+        100dvh - var(--header-height) - var(--footer-height) - 2em
+      );
+    }
+  }
+}
+
+.table {
+  width: 100%;
+  margin-bottom: var(--page-padding);
+
+  & td:first-of-type {
+    width: 100%;
   }
 
   & caption {
     padding-top: 0.5em;
     font-size: 0.75em;
-    opacity: 0.3;
+    opacity: 0.6;
   }
 
   & td[colspan='2'] {
@@ -41,5 +56,59 @@
 
   & tr:not(:first-of-type) td[colspan='2'] {
     padding-top: 1.5em;
+  }
+
+  &_hidden {
+    @include media('sm-down') {
+      display: none;
+    }
+  }
+}
+
+.asterisk {
+  opacity: 0.6;
+}
+
+.menu {
+  z-index: zIndex('medium');
+  width: 100%;
+  margin-top: 1.5em;
+  // border-top: 1px solid theme-color('content');
+  background-color: theme-color('background');
+
+  @include media('sm-down') {
+    z-index: zIndex('high');
+    position: sticky;
+    top: var(--header-height);
+    left: 0;
+    margin-top: -1em;
+    border-bottom: 1px solid theme-color('content');
+
+    &::after {
+      position: absolute;
+      height: 0.5em;
+      inset: 0;
+      top: calc(100% + 1px);
+      bottom: unset;
+      background: linear-gradient(theme-color('background'), transparent);
+      content: '';
+    }
+  }
+}
+
+.menu_control {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5em 0;
+  // font-weight: 700;
+  text-align: left;
+
+  @include media('md') {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 0.5;
   }
 }

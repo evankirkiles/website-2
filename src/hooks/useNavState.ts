@@ -60,7 +60,7 @@ export default function useNavState({ menuRef, buttonRef }: UseNavStateOptions) 
     // 2.1 close the menu on large screens
     const mql = window.matchMedia('(min-width: 768px)');
     function onLarge({ matches }: MediaQueryListEvent) {
-      setOpen((prev) => !matches && prev);
+      setOpen((prev) => matches && !prev);
     }
     // 2.2 set focus to button once menu is closed
     function onKeyDown(e: KeyboardEvent) {
@@ -115,17 +115,17 @@ export default function useNavState({ menuRef, buttonRef }: UseNavStateOptions) 
   // 4. Prevent screenreader escaping from the menu when open. Assumes that
   // all of your content is in header, main, and footer. If you use the provided
   // layout setup, it will be.
-  useEffect(() => {
-    if (open) {
-      document
-        .querySelectorAll('header,main,footer')
-        ?.forEach((el) => el.setAttribute('aria-hidden', 'true'));
-    } else {
-      document
-        .querySelectorAll('header,main,footer')
-        ?.forEach((el) => el.setAttribute('aria-hidden', 'true'));
-    }
-  }, [open]);
+  // useEffect(() => {
+  //   if (open) {
+  //     document
+  //       .querySelectorAll('header,main,footer')
+  //       ?.forEach((el) => el.setAttribute('aria-hidden', 'true'));
+  //   } else {
+  //     document
+  //       .querySelectorAll('header,main,footer')
+  //       ?.forEach((el) => el.setAttribute('aria-hidden', 'true'));
+  //   }
+  // }, [open]);
 
   return {
     open,

@@ -6,16 +6,27 @@
  */
 
 import getClient from '@/sanity/client';
-import { Software } from '@/sanity/schema';
+import { SitePage, Software } from '@/sanity/schema';
 import getPreview from '@/util/getPreview';
 import { groq } from 'next-sanity';
 import React, { PropsWithChildren } from 'react';
 import s from './Software.module.scss';
 import SoftwareNav from '@/app/(main)/software/_components/SoftwareNav';
-import { softwaresQuery } from '@/sanity/groq';
+import { pageQuery, softwaresQuery } from '@/sanity/groq';
+import { notFound } from 'next/navigation';
+import PreviewProvider from '@/components/PreviewProvider';
+import PreviewPageBuilder from '@/components/PageBuilder/preview';
+import PageBuilder from '@/components/PageBuilder';
 
 export default async function SoftwareLayout({ children }: PropsWithChildren) {
   const preview = getPreview();
+  const params = { path: `.software` };
+  const page: SitePage | null = await getClient(preview).fetch(
+    pageQuery,
+    params,
+    { next: { tags: [`page${params.path}`] } }
+  );
+  if (!page) return notFound();
   const software: Software[] = await getClient(preview).fetch(
     softwaresQuery,
     undefined,
@@ -43,7 +54,19 @@ export default async function SoftwareLayout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <SoftwareNav groups={groups} />
+      <SoftwareNav groups={groups}>
+        {preview && preview.token ? (
+          <PreviewProvider token={preview.token}>
+            <PreviewPageBuilder
+              initialValue={page}
+              query={pageQuery}
+              params={params}
+            />
+          </PreviewProvider>
+        ) : (
+          <PageBuilder content={page.pageBuilder} />
+        )}
+      </SoftwareNav>
       {children}
     </>
   );

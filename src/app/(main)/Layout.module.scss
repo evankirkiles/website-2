@@ -44,7 +44,7 @@
   z-index: 0;
   grid-area: sidebar;
   flex: 1;
-  min-width: min(300px, 100%);
+  min-width: min(400px, 100%);
 
   @include media('md') {
     position: sticky;
@@ -62,13 +62,15 @@
     }
 
     & polygon {
-      transition: fill 0.1s ease-in-out;
+      fill: theme-color('background2');
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
     }
 
     & a:hover polygon,
     & a:focus-visible polygon {
-      fill: theme-color('background2');
       cursor: pointer;
+      opacity: 1;
     }
   }
 }

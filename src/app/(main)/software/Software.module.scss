@@ -16,15 +16,15 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
   width: 100%;
 
-  // @include media('md') {
-  //   min-width: 500px;
-  // }
+  @include media('md') {
+    grid-template-columns: repeat(auto-fit, minmax(min(40ch, 100%), 1fr));
+  }
 
-  @include media('lg') {
-    grid-template-columns: 1fr 1fr;
+  @include media('xl') {
+    grid-template-columns: repeat(auto-fit, minmax(min(50ch, 100%), 1fr));
   }
 
   & li {
@@ -42,11 +42,19 @@
     }
   }
 
-  & a img {
-    mix-blend-mode: lighten;
+  & a {
+    opacity: 1;
+    &:hover {
+      // color: theme-color('content');
+      opacity: 0.6;
+    }
   }
 
-  & a:hover img {
-    opacity: 0.5;
+  & a img {
+    mix-blend-mode: lighten;
+
+    :global(.light-mode) & {
+      mix-blend-mode: difference;
+    }
   }
 }
