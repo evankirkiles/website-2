@@ -73,9 +73,9 @@ export default function SoftwareNav({ groups, children }: SoftwareNavProps) {
                   </React.Fragment>
                 ))}
             </tbody>
-            {/* <caption style={{ captionSide: 'bottom', textAlign: 'left' }}>
+            <caption style={{ captionSide: 'bottom', textAlign: 'left' }}>
               * Ongoing development
-            </caption> */}
+            </caption>
           </table>
         </nav>
       </div>
