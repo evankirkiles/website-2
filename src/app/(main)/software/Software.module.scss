@@ -74,13 +74,13 @@
     opacity: 1;
 
     @media (hover: hover) {
-      &:hover {
+      :global(.dark-mode) &:hover {
         // color: theme-color('content');
         opacity: 0.6;
       }
     }
 
-    &::before {
+    :global(.dark-mode) &::before {
       position: absolute;
       inset: 5% 3% 2em 3%;
       // border: 1px solid theme-color('border');
@@ -94,7 +94,7 @@
     mix-blend-mode: lighten;
 
     :global(.light-mode) & {
-      mix-blend-mode: difference;
+      mix-blend-mode: exclusion;
     }
   }
 }

@@ -27,7 +27,7 @@
   }
 
   & a[aria-current='page'] polygon {
-    fill: theme-color('background2');
+    fill: theme-color('content');
     opacity: 1;
   }
 }
