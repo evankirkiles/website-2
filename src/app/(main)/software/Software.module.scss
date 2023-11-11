@@ -24,7 +24,11 @@
   }
 
   @include media('xl') {
-    grid-template-columns: repeat(auto-fit, minmax(min(50ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(52ch, 100%), 1fr));
+  }
+
+  @include media('xxl') {
+    grid-template-columns: repeat(auto-fit, minmax(min(60ch, 100%), 1fr));
   }
 
   & li {

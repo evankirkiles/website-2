@@ -1,0 +1,28 @@
+/*
+ * Art.module.scss
+ * Author: Evan Kirkiles
+ * Created On Fri Nov 10 2023
+ * 2023 Digital Portfolio 
+ */
+
+.container {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  max-width: unset !important;
+  overflow: hidden;
+
+  & img {
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: exclusion;
+
+    :global(.light-mode) & {
+      mix-blend-mode: difference;
+    }
+  }
+}
