@@ -111,10 +111,6 @@ li {
   outline: 3px double var(--highlight-color);
 }
 
-a {
-  @media (hover: hover) {
-    &:hover {
-      color: theme-color('content2');
-    }
-  }
+a:hover {
+  color: theme-color('content2');
 }

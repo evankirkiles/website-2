@@ -6,13 +6,14 @@
  */
 
 import Image from 'next/image';
-import nobot from '@/assets/images/IMG_9991.jpg';
+import nobot from '@/assets/images/Design.png';
 import s from './Art.module.scss';
 
 export default function ArtPage() {
   return (
     <article className={s.container}>
       <Image src={nobot} alt="A robot." />
+      <h1>Coming soon...</h1>
     </article>
   );
 }

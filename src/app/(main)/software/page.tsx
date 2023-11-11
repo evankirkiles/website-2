@@ -60,7 +60,15 @@ export default async function SoftwarePage() {
                           unwrapReference(page).path.current.replaceAll('.', '/')
                         }`}
                       >
-                        <SanityImage image={unwrapReference(picture.asset)} />
+                        <SanityImage
+                          image={unwrapReference(picture.asset)}
+                          sizes="
+                          (max-width: 560px) 100vw,
+                          (max-width: 768px) 50vw,
+                          (max-width: 1140px) 75vw,
+                          50vw
+                        "
+                        />
                         <small>{short_title}</small>
                       </Link>
                     </li>

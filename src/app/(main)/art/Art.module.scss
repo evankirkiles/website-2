@@ -19,10 +19,18 @@
     overflow: hidden;
     object-fit: cover;
     object-position: center;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: lighten;
 
     :global(.light-mode) & {
       mix-blend-mode: difference;
     }
+  }
+
+  & h1 {
+    position: absolute;
+    inset: 0.5em;
+    font-size: 3em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
   }
 }
