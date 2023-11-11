@@ -22,10 +22,14 @@ export default function Header() {
             <NavLink href="/software">Software</NavLink>
           </li>
           <li>
-            <NavLink href="/design">Design</NavLink>
+            <NavLink href="/design" aria-disabled="true" tabIndex={-1}>
+              Design
+            </NavLink>
           </li>
           <li>
-            <NavLink href="/art">Art</NavLink>
+            <NavLink href="/art" aria-disabled="true" tabIndex={-1}>
+              Art
+            </NavLink>
           </li>
           <li>
             <NavLink href="/about">About</NavLink>

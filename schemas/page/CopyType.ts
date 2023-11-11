@@ -17,11 +17,11 @@ const CopyType = defineType({
   icon: PiTextAlignLeftFill,
   description: 'Configurable block text.',
   fields: [
-    {
+    defineField({
       name: 'content',
       type: 'array' as const,
       of: [{ type: 'block' as const }],
-    },
+    }),
     defineField({
       name: 'columns',
       description:
@@ -33,6 +33,12 @@ const CopyType = defineType({
       options: {
         list: [1, 2, 3],
       },
+    }),
+    defineField({
+      name: 'hide_on_small',
+      type: 'boolean' as const,
+      description: 'If true, hides this copy on small height devices.',
+      initialValue: false,
     }),
   ],
 });

@@ -57,6 +57,12 @@
         pointer-events: none;
       }
     }
+
+    & a[aria-disabled='true'] {
+      text-decoration: line-through;
+      opacity: 0.3;
+      pointer-events: none;
+    }
   }
 
   & li {

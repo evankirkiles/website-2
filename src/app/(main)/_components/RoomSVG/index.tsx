@@ -44,6 +44,8 @@ export default function RoomSVG(props: HTMLProps<SVGSVGElement>) {
           href="/design"
           aria-label="Go to the Design page."
           aria-current={pathname.startsWith('/design') ? 'page' : undefined}
+          aria-disabled="true"
+          tabIndex={-1}
         >
           <polygon
             points="1400.710 291.500, 739.289 291.500, 739.289 551.500, 1400.710 551.500, 1400.710 291.500"
@@ -55,6 +57,8 @@ export default function RoomSVG(props: HTMLProps<SVGSVGElement>) {
           href="/art"
           aria-label="Go to the Art page."
           aria-current={pathname.startsWith('/art') ? 'page' : undefined}
+          aria-disabled="true"
+          tabIndex={-1}
         >
           <polygon
             points="2139.500 840.500, 2139.500 0.000, 1400.500 291.500, 1400.500 551.500, 2139.500 840.500"

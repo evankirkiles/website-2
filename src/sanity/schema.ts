@@ -174,6 +174,13 @@ export type PeCopy = {
    * How many evenly-spaced columns to break the text into. Default 1.
    */
   columns: number;
+
+  /**
+   * hide_on_small — `boolean`
+   *
+   * If true, hides this copy on small height devices.
+   */
+  hide_on_small?: boolean;
 };
 
 export type PeColumns = {

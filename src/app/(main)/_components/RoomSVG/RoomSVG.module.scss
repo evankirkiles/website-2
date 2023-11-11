@@ -30,6 +30,15 @@
     fill: theme-color('content');
     opacity: 1;
   }
+
+  & a[aria-disabled='true'] polygon {
+    pointer-events: none;
+
+    & polygon {
+      fill: theme-color('background2');
+      opacity: 1;
+    }
+  }
 }
 
 .label {

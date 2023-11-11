@@ -111,6 +111,7 @@ li {
   outline: 3px double var(--highlight-color);
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
   color: theme-color('content2');
 }

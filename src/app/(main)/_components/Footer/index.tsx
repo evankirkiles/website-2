@@ -31,6 +31,12 @@ export default function Footer() {
             {/* <GrGithub /> */}
           </a>
         </li>
+        <li>
+          <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">
+            CV
+            {/* <GrGithub /> */}
+          </a>
+        </li>
       </ul>
       {/* <ul>
         <li></li>

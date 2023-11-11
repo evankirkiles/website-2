@@ -21,3 +21,9 @@
   flex: 1;
   min-height: 1.5em;
 }
+
+.hide_on_small {
+  @media screen and (max-height: 768px) {
+    display: none;
+  }
+}
