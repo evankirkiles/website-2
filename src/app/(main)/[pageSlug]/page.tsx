@@ -39,7 +39,6 @@ interface PageProps {
 export default async function SubPage({ params: { pageSlug } }: PageProps) {
   const preview = getPreview();
   const params = { path: `.${pageSlug}` };
-  console.log(`page${params.path}`);
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     params,

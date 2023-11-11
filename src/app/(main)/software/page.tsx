@@ -50,43 +50,50 @@ export default async function SoftwarePage() {
           .sort(([_, a], [__, b]) => b.length - a.length)
           .map(([group, softwares]) => (
             <React.Fragment key={group}>
-              {softwares.map(({ _id, short_title, picture, link }) => {
-                if (!picture) return null;
-                if (link) {
-                  return (
-                    <li key={_id}>
-                      <a href={link} target="_blank" rel="noopener noreferrer">
-                        <SanityImage
-                          image={unwrapReference(picture.asset)}
-                          sizes="
+              {softwares.map(
+                ({ _id, short_title, picture, link, under_development }) => {
+                  if (!picture) return null;
+                  if (link) {
+                    return (
+                      <li key={_id}>
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                          <SanityImage
+                            image={unwrapReference(picture.asset)}
+                            sizes="
                         (max-width: 560px) 100vw,
                         (max-width: 768px) 50vw,
                         (max-width: 1140px) 75vw,
                         50vw
                       "
-                        />
-                        <small>{short_title}</small>
-                      </a>
-                    </li>
-                  );
-                }
-                return (
-                  picture && (
-                    <li key={_id}>
-                      <SanityImage
-                        image={unwrapReference(picture.asset)}
-                        sizes="
+                          />
+                          <small>
+                            {short_title}
+                            <span className={s.asterisk}>
+                              {under_development && ' *'}
+                            </span>
+                          </small>
+                        </a>
+                      </li>
+                    );
+                  }
+                  return (
+                    picture && (
+                      <li key={_id}>
+                        <SanityImage
+                          image={unwrapReference(picture.asset)}
+                          sizes="
                           (max-width: 560px) 100vw,
                           (max-width: 768px) 50vw,
                           (max-width: 1140px) 75vw,
                           50vw
                         "
-                      />
-                      <small>{short_title}</small>
-                    </li>
-                  )
-                );
-              })}
+                        />
+                        <small>{short_title}</small>
+                      </li>
+                    )
+                  );
+                }
+              )}
             </React.Fragment>
           ))}
       </ul>
