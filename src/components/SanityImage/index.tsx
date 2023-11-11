@@ -22,9 +22,10 @@ export default function SanityImage({ image, ...props }: SanityImageProps) {
     <Image
       {...imageProps}
       alt={image.altText || 'No alt text provided.'}
-      // sizes="(max-width: 800w) 800w"
-      // placeholder="blur"
-      // blurDataURL={image.metadata.lqip}
+      // sizes="(max-width: 600px) 80ch,
+      //        10vw"
+      placeholder="blur"
+      blurDataURL={image.metadata.lqip}
       {...props}
     />
   );

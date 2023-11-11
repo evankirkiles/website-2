@@ -54,6 +54,8 @@
   }
 
   & a img {
+    overflow: hidden;
+    border-radius: 10px;
     mix-blend-mode: lighten;
 
     :global(.light-mode) & {
