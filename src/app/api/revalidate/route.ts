@@ -64,6 +64,7 @@ export async function POST(req: NextRequest) {
       break;
     case 'software':
       revalidated.push(`software`);
+      break;
     default:
       throw new Error('Invalid revalidation type.');
   }
