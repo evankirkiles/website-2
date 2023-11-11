@@ -10,11 +10,9 @@ import PreviewPageBuilder from '@/components/PageBuilder/preview';
 import PreviewProvider from '@/components/PreviewProvider';
 import getClient from '@/sanity/client';
 import { pageQuery, pagesQuery } from '@/sanity/groq';
-import { PeCopy, SanityKeyed, SitePage } from '@/sanity/schema';
+import { SitePage } from '@/sanity/schema';
 import generateMetadataForPage from '@/util/generateMetadata';
 import getPreview from '@/util/getPreview';
-import { toPlainText } from '@portabletext/react';
-import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 /* ---------------------------- Param generation ---------------------------- */
@@ -40,7 +38,7 @@ interface PageProps {
 
 export default async function SubPage({ params: { pageSlug } }: PageProps) {
   const preview = getPreview();
-  const params = { path: `.${pageSlug}` };
+  const params = { path: `${pageSlug}` };
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     params,

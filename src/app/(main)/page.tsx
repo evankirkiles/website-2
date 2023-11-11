@@ -23,7 +23,7 @@ export default async function Page() {
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     { path: '.' },
-    { next: { tags: [`page.`] }, cache: 'no-store' }
+    { next: { tags: [`page.`] } }
   );
 
   return (
