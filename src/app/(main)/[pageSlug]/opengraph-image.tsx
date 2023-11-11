@@ -5,7 +5,7 @@
  * 2023 Digital Portfolio
  */
 
-import { ImageResponse } from 'next/og';
+import { ImageResponse } from 'next/server';
 
 export const runtime = 'edge';
 export const contentType = 'image/png';
@@ -24,19 +24,22 @@ export default async function Image({
       <div
         style={{
           fontFamily: 'Arial',
-          fontSize: 72,
+          fontSize: 180,
           background: 'black',
           color: 'white',
           width: '100%',
           height: '100%',
-          paddingTop: '1%',
+          // paddingTop: '1%',
           display: 'flex',
           flexDirection: 'column',
-          padding: '3rem',
+          alignItems: 'center',
+          justifyContent: 'center',
+          // padding: '3rem',
           fontWeight: '700',
         }}
       >
-        <div
+        <div>EWK</div>
+        {/* <div
           style={{
             display: 'flex',
             position: 'relative',
@@ -50,31 +53,8 @@ export default async function Image({
         >
           Evan Kirkiles
           <br />
-          <span
-            style={{
-              fontWeight: '400',
-              fontSize: 36,
-              marginLeft: '-0.3em',
-              color: '#666',
-            }}
-          >
-            {['Art', 'Software', 'Design', 'About']
-              .map((val) => (
-                <span
-                  key={val}
-                  style={{
-                    color: val.toLowerCase() === pageSlug ? 'white' : undefined,
-                    margin: '0 0.3em',
-                  }}
-                >
-                  {val}
-                </span>
-              ))
-              .reduce((acc, val, i) => {
-                if (i !== 0) acc.push(<>{' / '}</>);
-                acc.push(val);
-                return acc;
-              }, [] as JSX.Element[])}
+          <span style={{ fontWeight: '400', fontSize: 36 }}>
+            Art / Software / Design / About
           </span>
           <div style={{ flex: 1 }}></div>
           <span
@@ -101,7 +81,7 @@ export default async function Image({
               border: '1px solid white',
             }}
           ></div>
-        </div>
+        </div> */}
       </div>
     ),
     {
