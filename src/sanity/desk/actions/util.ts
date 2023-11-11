@@ -30,10 +30,15 @@ export async function revalidateItem({
   try {
     // in development, use the unsafe route handler
     if (NODE_ENV === 'development') {
-      await fetch(`/api/revalidatemanual`, {
+      const resp = await fetch(`/api/revalidatemanual`, {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tags }),
-      });
+      }).then((r) => r.json());
+      if (!resp.success) {
+        throw new Error('Failed revalidation.');
+      }
+      tags = resp.tags;
     }
     // always trigger the webhook using a patch operation, as we don't want
     // the production site to fall out of sync.

@@ -22,13 +22,13 @@
  */
 
 import { SANITY_WEBHOOK_SECRET } from '@/env';
-import { SitePage } from '@/sanity/schema';
+import { SitePage, Software } from '@/sanity/schema';
 import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 // to add other revalidation entities, add their types in the signature here.
-function checkIsRevalidationEntity(body: any): body is SitePage {
+function checkIsRevalidationEntity(body: any): body is SitePage | Software {
   return !!body._type;
 }
 
@@ -44,25 +44,29 @@ export async function POST(req: NextRequest) {
     SANITY_WEBHOOK_SECRET
   );
   if (!isValid) {
-    return NextResponse.json({ success: false, message: 'Invalid signature.' });
+    return NextResponse.json(
+      { success: false, message: 'Invalid signature.' },
+      { status: 401 }
+    );
   }
   if (!body || !checkIsRevalidationEntity(body)) {
-    return NextResponse.json({ success: false, message: 'Invalid body.' });
+    return NextResponse.json(
+      { success: false, message: 'Invalid body.' },
+      { status: 400 }
+    );
   }
 
   // if valid request, attempt to do the revalidation
-  try {
-    let revalidated: string[] = [];
-    switch (body._type) {
-      case 'site_page':
-        revalidated.push(`page${body.path.current}`);
-        break;
-      default:
-        throw new Error('Invalid revalidation type.');
-    }
-    revalidated.forEach(revalidateTag);
-    return NextResponse.json({ success: true, revalidated });
-  } catch (e) {
-    return NextResponse.json({ success: false, error: e });
+  let revalidated: string[] = [];
+  switch (body._type) {
+    case 'site_page':
+      revalidated.push(`page${body.path.current}`);
+      break;
+    case 'software':
+      revalidated.push(`software`);
+    default:
+      throw new Error('Invalid revalidation type.');
   }
+  revalidated.forEach(revalidateTag);
+  return NextResponse.json({ success: true, revalidated });
 }
