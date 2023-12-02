@@ -30,10 +30,7 @@ export default async function SoftwareLayout({ children }: PropsWithChildren) {
   const software: Software[] = await getClient(preview).fetch(
     softwaresQuery,
     undefined,
-    {
-      next: { tags: [`software`] },
-      cache: 'no-cache',
-    }
+    { next: { tags: [`software`] } }
   );
 
   const groups = software.reduce(

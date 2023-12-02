@@ -27,20 +27,21 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(28ch, 100%), 1fr));
   width: 100%;
+  min-width: min(400px, 100%);
 
   @include media('md') {
-    grid-template-columns: repeat(auto-fit, minmax(min(40ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
   }
 
   @include media('xl') {
-    grid-template-columns: repeat(auto-fit, minmax(min(52ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(50ch, 100%), 1fr));
   }
 
-  @include media('xxl') {
-    grid-template-columns: repeat(auto-fit, minmax(min(60ch, 100%), 1fr));
-  }
+  // @include media('xxl') {
+  //   grid-template-columns: repeat(auto-fit, minmax(min(50ch, 100%), 1fr));
+  // }
   & > * {
     animation: fade-up 0.3s ease-in-out;
     animation-delay: 4 * 100ms;

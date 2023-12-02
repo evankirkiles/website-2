@@ -21,10 +21,7 @@ export default async function SoftwarePage() {
   const software: Software[] = await getClient(preview).fetch(
     softwaresQuery,
     undefined,
-    {
-      next: { tags: [`software`] },
-      cache: 'no-cache',
-    }
+    { next: { tags: [`software`] } }
   );
 
   const groups = software.reduce(
