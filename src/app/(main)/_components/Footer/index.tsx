@@ -4,16 +4,29 @@
  * Created On Sun Oct 01 2023
  * 2023 Digital Portfolio
  */
+import getPreview from '@/util/getPreview';
 import s from './Footer.module.scss';
+import getClient from '@/sanity/client';
+import { settingsQuery } from '@/sanity/groq';
+import { SiteSettings } from '@/sanity/schema';
+import unwrapReference from '@/util/sanity';
 
-export default function Footer() {
+export default async function Footer() {
+  const preview = getPreview();
+  const settings: SiteSettings = await getClient(preview).fetch(
+    settingsQuery,
+    undefined,
+    { next: { tags: [`site_settings`] } }
+  );
+  const cvUrl = settings.resume && unwrapReference(settings.resume.asset).url;
+
   return (
     <footer className={s.container}>
       <hr />
       <ul>
         <li>
           <a
-            href="mailto:kirkilese@gmail.com"
+            href={`mailto:${settings.contact_email}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -32,7 +45,7 @@ export default function Footer() {
           </a>
         </li>
         <li>
-          <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a href={cvUrl} target="_blank" rel="noopener noreferrer">
             CV
             {/* <GrGithub /> */}
           </a>
@@ -45,7 +58,7 @@ export default function Footer() {
         <li>Github</li>
       </ul> */}
       <p>
-        Evan&nbsp;Kirkiles&nbsp;©&nbsp;2023 —&nbsp;
+        Evan&nbsp;Kirkiles&nbsp;©&nbsp;2022 —&nbsp;
         <a
           href="https://creativecommons.org/licenses/by-nc-sa/4.0"
           target="_blank"

@@ -22,13 +22,15 @@
  */
 
 import { SANITY_WEBHOOK_SECRET } from '@/env';
-import { SitePage, Software } from '@/sanity/schema';
+import { SitePage, SiteSettings, Software } from '@/sanity/schema';
 import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 // to add other revalidation entities, add their types in the signature here.
-function checkIsRevalidationEntity(body: any): body is SitePage | Software {
+function checkIsRevalidationEntity(
+  body: any
+): body is SitePage | Software | SiteSettings {
   return !!body._type;
 }
 
@@ -61,6 +63,9 @@ export async function POST(req: NextRequest) {
   switch (body._type) {
     case 'site_page':
       revalidated.push(`page${body.path.current}`);
+      break;
+    case 'site_settings':
+      revalidated.push(`site_settings`);
       break;
     case 'software':
       revalidated.push(`software`);

@@ -37,6 +37,64 @@ export type {
 };
 
 /**
+ * Site Settings
+ *
+ *
+ */
+export interface SiteSettings extends SanityDocument {
+  _type: "site_settings";
+
+  /**
+   * Site Title — `string`
+   *
+   * The name of the site (what shows in tab bar). Should be under 66 characters.
+   */
+  title?: string;
+
+  /**
+   * Site Description — `string`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Instagram Link — `string`
+   *
+   *
+   */
+  instagram?: string;
+
+  /**
+   * Twitter Link — `string`
+   *
+   *
+   */
+  twitter?: string;
+
+  /**
+   * Facebook Link — `string`
+   *
+   *
+   */
+  facebook?: string;
+
+  /**
+   * Contact Email — `string`
+   *
+   *
+   */
+  contact_email?: string;
+
+  /**
+   * Resume — `file`
+   *
+   *
+   */
+  resume?: { _type: "file"; asset: SanityReference<any> };
+}
+
+/**
  * Site Page
  *
  *
@@ -224,4 +282,4 @@ export type PeSpacer = {
   placeholder?: boolean;
 };
 
-export type Documents = SitePage | Software;
+export type Documents = SiteSettings | SitePage | Software;

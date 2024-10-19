@@ -8,7 +8,9 @@
 import { Studio } from '@/app/(sanity)/studio/[[...index]]/Studio';
 
 // Set the right `viewport`, `robots` and `referer` meta tags
-export { metadata } from 'next-sanity/studio/metadata';
+export { metadata, viewport } from 'next-sanity/studio';
+
+export const dynamic = 'force-static';
 
 export default function StudioPage() {
   return (

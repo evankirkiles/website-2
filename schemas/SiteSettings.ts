@@ -44,6 +44,14 @@ const SiteSettings: SchemaTypeDefinition<'document'> = {
       type: 'string' as const,
       title: 'Contact Email',
     }),
+    defineField({
+      name: 'resume',
+      type: 'file' as const,
+      title: 'Resume',
+      options: {
+        accept: '.pdf',
+      },
+    }),
   ],
 };
 

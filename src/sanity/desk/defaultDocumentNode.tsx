@@ -5,8 +5,8 @@
  * 2023 Digital Portfolio
  */
 
-import Iframe from 'sanity-plugin-iframe-pane';
-import { DefaultDocumentNodeResolver } from 'sanity/desk';
+import { Iframe } from 'sanity-plugin-iframe-pane';
+import { DefaultDocumentNodeResolver } from 'sanity/structure';
 
 /**
  * Defines custom document views for specific document types. For example, this

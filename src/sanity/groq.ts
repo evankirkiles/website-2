@@ -48,3 +48,10 @@ export const softwaresQuery = groq`*[_type == "software"] {
     }
   }
 }`;
+
+export const settingsQuery = groq`*[_type == "site_settings"][0] {
+  ...,
+  resume {
+    asset ->
+  }
+}`;
