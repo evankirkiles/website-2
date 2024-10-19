@@ -17,7 +17,7 @@
     "@sanity/types": "^3.61.0",
     "@sanity/ui": "^2.8.9",
     "@sanity/vision": "^3.61.0",
-    "@sanity/webhook": "^4.0.4",
+    "@sanity/webhook": "^3.0.1",
     "classnames": "^2.5.1",
     "next": "14.2.15",
     "next-sanity": "9.5.5",
