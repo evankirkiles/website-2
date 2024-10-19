@@ -8,11 +8,9 @@
 import getClient from '@/sanity/client';
 import { Software } from '@/sanity/schema';
 import getPreview from '@/util/getPreview';
-import { groq } from 'next-sanity';
 import React from 'react';
 import s from './Software.module.scss';
 import { softwaresQuery } from '@/sanity/groq';
-import Link from 'next/link';
 import SanityImage from '@/components/SanityImage';
 import unwrapReference from '@/util/sanity';
 
