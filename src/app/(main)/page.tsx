@@ -19,7 +19,7 @@ import getPreview from '@/util/getPreview';
 /* -------------------------------------------------------------------------- */
 
 export default async function Page() {
-  const preview = getPreview();
+  const preview = await getPreview();
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,
     { path: '.' },

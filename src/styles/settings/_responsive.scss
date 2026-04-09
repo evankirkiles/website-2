@@ -26,6 +26,9 @@
  * ```
  */
 
+@use 'sass:map';
+@use 'sass:list';
+
 $breakpoints: (
   'xxs': 360px,
   'xs': 450px,
@@ -40,7 +43,7 @@ $breakpoints: (
 // Returns a media-query closure.
 $media-queries: ();
 @each $name, $size in $breakpoints {
-  $media-queries: map-merge(
+  $media-queries: map.merge(
     $media-queries,
     (
       '#{$name}': 'min-width: #{$size}',
@@ -50,12 +53,12 @@ $media-queries: ();
 
   // If there is a breakpoint above the current breakpoint, create a
   // <breakpoint>-down class.
-  $breakpoint-sizes: map-values($breakpoints);
-  $next-breakpoint-index: index($breakpoint-sizes, $size) + 1;
+  $breakpoint-sizes: map.values($breakpoints);
+  $next-breakpoint-index: list.index($breakpoint-sizes, $size) + 1;
 
-  @if $next-breakpoint-index <= length($breakpoint-sizes) {
-    $next-breakpoint-size: nth($breakpoint-sizes, $next-breakpoint-index);
-    $media-queries: map-merge(
+  @if $next-breakpoint-index <= list.length($breakpoint-sizes) {
+    $next-breakpoint-size: list.nth($breakpoint-sizes, $next-breakpoint-index);
+    $media-queries: map.merge(
       $media-queries,
       (
         '#{$name}-down': 'max-width: #{$next-breakpoint-size - 1px}',
@@ -66,7 +69,7 @@ $media-queries: ();
 
 // Returns a media query for the given breakpoint
 @function query($query-name) {
-  @return '#{map-get($media-queries, $query-name)}';
+  @return '#{map.get($media-queries, $query-name)}';
 }
 
 // Wraps styling with the given media query for the breakpoint.

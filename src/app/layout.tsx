@@ -6,9 +6,8 @@
  */
 
 import type { Metadata } from 'next';
-import { ColorSchemeScript } from '@/util/earlyScripts';
+import { COLOR_SCHEME_INLINE } from '@/util/earlyScripts';
 import { SITE_URL } from '@/env';
-import s from './Layout.module.scss';
 import './globals.scss';
 
 // Base metadata for the entire app
@@ -49,7 +48,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
-        <ColorSchemeScript />
+        <script
+          id="daylight-color-scheme-script"
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: COLOR_SCHEME_INLINE,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>

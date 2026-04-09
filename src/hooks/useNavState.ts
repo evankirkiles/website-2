@@ -20,8 +20,8 @@ const FOCUS_SELECTOR =
   'a[href]:not([disabled]), button:not([disabled]), input:not([disabled])';
 
 interface UseNavStateOptions {
-  menuRef: RefObject<HTMLDivElement>;
-  buttonRef: RefObject<HTMLButtonElement>;
+  menuRef: RefObject<HTMLDivElement | null>;
+  buttonRef: RefObject<HTMLButtonElement | null>;
 }
 
 /**

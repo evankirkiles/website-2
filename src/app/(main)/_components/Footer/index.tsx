@@ -12,7 +12,7 @@ import { SiteSettings } from '@/sanity/schema';
 import unwrapReference from '@/util/sanity';
 
 export default async function Footer() {
-  const preview = getPreview();
+  const preview = await getPreview();
   const settings: SiteSettings = await getClient(preview).fetch(
     settingsQuery,
     undefined,
@@ -31,7 +31,6 @@ export default async function Footer() {
             rel="noopener noreferrer"
           >
             Email
-            {/* <CCLogo /> */}
           </a>
         </li>
         <li>
@@ -41,13 +40,11 @@ export default async function Footer() {
             rel="noopener noreferrer"
           >
             Github
-            {/* <GrGithub /> */}
           </a>
         </li>
         <li>
           <a href={cvUrl} target="_blank" rel="noopener noreferrer">
             CV
-            {/* <GrGithub /> */}
           </a>
         </li>
       </ul>

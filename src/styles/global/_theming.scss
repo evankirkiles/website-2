@@ -10,7 +10,7 @@
  * site based on the found preference.
  */
 
-@import '@/styles/settings/colors';
+@use '@/styles/settings/colors' as *;
 
 :root {
   // By default, read light mode color variables from SCSS settings

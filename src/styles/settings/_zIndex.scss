@@ -10,6 +10,7 @@
  *  - zIndex("high") + n for top-level layout overlays (nav menus)
  * Read up on stacking contexts for more information regarding z-indexing.
  */
+@use 'sass:map';
 
 $zIndex: (
   'low': 1,
@@ -19,5 +20,5 @@ $zIndex: (
 
 // Returns a z-index from the above z-index map
 @function zIndex($level) {
-  @return map-get($zIndex, $level);
+  @return map.get($zIndex, $level);
 }

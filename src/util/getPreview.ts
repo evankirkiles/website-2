@@ -14,7 +14,7 @@ import { SANITY_API_READ_TOKEN } from '@/env';
  *
  * @returns The Sanity API read token for live queries.
  */
-export default function getPreview() {
-  if (!draftMode().isEnabled) return undefined;
+export default async function getPreview() {
+  if (!(await draftMode()).isEnabled) return undefined;
   return { token: SANITY_API_READ_TOKEN };
 }

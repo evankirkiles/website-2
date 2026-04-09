@@ -9,12 +9,10 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-// cache types for intellisense
-import FetchCache from 'next/dist/server/lib/incremental-cache/fetch-cache';
 import type { IncrementalCache } from 'next/dist/server/lib/incremental-cache';
 
 declare global {
-  var __incrementalCache: IncrementalCache & { cacheHandler: FetchCache };
+  var __incrementalCache: IncrementalCache & { cacheHandler: Record<string, any> };
 }
 
 export const dynamic = 'force-dynamic';

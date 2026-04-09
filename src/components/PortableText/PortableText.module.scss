@@ -8,7 +8,7 @@
  * _are_ actually text.
  */
 
-@import '@/styles/utils';
+@use '@/styles/utils' as *;
 
 .p {
   margin: 0.5rem 0;

@@ -7,8 +7,8 @@
  * Typography resets and font scaling, as defined by your settings.
  */
 @use 'sass:math';
-@import '@/styles/settings/type';
-@import '@/styles/settings/responsive';
+@use '@/styles/settings/type' as *;
+@use '@/styles/settings/responsive' as *;
 
 // Converts a px value to rem at compile time.
 @function pxToRem($pixel-value) {

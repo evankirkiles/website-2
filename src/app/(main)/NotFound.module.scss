@@ -4,7 +4,7 @@
  * Created On Tue Sep 26 2023
  * 2023 Digital Portfolio 
  */
-@import '@/styles/utils';
+@use '@/styles/utils' as *;
 
 .container {
   display: flex;

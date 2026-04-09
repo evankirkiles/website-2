@@ -15,7 +15,7 @@ import SanityImage from '@/components/SanityImage';
 import unwrapReference from '@/util/sanity';
 
 export default async function SoftwarePage() {
-  const preview = getPreview();
+  const preview = await getPreview();
   const software: Software[] = await getClient(preview).fetch(
     softwaresQuery,
     undefined,

@@ -73,6 +73,6 @@ export async function POST(req: NextRequest) {
     default:
       throw new Error('Invalid revalidation type.');
   }
-  revalidated.forEach(revalidateTag);
+  revalidated.forEach((tag) => revalidateTag(tag, 'max'));
   return NextResponse.json({ success: true, revalidated });
 }

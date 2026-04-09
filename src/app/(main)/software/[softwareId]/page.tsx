@@ -26,7 +26,7 @@ interface PageProps {
 export default async function SoftwarePage({
   params: { softwareId },
 }: PageProps) {
-  const preview = getPreview();
+  const preview = await getPreview();
   const params = { path: `.software.${softwareId}` };
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,

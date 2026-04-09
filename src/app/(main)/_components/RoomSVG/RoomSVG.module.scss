@@ -4,7 +4,7 @@
  * Created On Fri Nov 10 2023
  * 2023 Digital Portfolio 
  */
-@import '@/styles/utils';
+@use '@/styles/utils' as *;
 
 .image {
   width: 100%;

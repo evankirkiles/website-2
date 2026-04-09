@@ -4,7 +4,7 @@
  * Created On Sun Oct 01 2023
  * 2023 Digital Portfolio 
  */
-@import '@/styles/utils';
+@use '@/styles/utils' as *;
 
 @keyframes fade-up {
   from {

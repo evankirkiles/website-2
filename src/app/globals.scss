@@ -8,8 +8,8 @@
  * modify or remove as necessary for your own use cases.
  */
 
-@import '@/styles/utils';
-@import '@/styles/globals';
+@use '@/styles/utils' as *;
+@use '@/styles/globals';
 
 :root {
   // a color to indicate selected / focused elements
@@ -70,30 +70,6 @@ body {
     padding: 0;
     gap: 0;
   }
-
-  // &::after {
-  //   position: fixed;
-  //   inset: var(--header-height) var(--page-padding);
-  //   background: linear-gradient(
-  //       to top left,
-  //       transparent 0%,
-  //       transparent calc(50% - 0.8px),
-  //       theme-color('content') 50%,
-  //       transparent calc(50% + 0.8px),
-  //       transparent 100%
-  //     ),
-  //     linear-gradient(
-  //       to top right,
-  //       transparent 0%,
-  //       transparent calc(50% - 0.8px),
-  //       theme-color('content') 50%,
-  //       transparent calc(50% + 0.8px),
-  //       transparent 100%
-  //     );
-  //   content: '';
-  //   // opacity: 0.2;
-  //   pointer-events: none;
-  // }
 }
 
 p,

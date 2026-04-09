@@ -25,6 +25,6 @@ export async function POST(req: NextRequest) {
   }
 
   const { tags } = (await req.json()) as { tags: string[] };
-  tags.forEach(revalidateTag);
+  tags.forEach((tag) => revalidateTag(tag, 'max'));
   return NextResponse.json({ success: true, tags });
 }

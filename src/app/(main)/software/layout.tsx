@@ -19,7 +19,7 @@ import PreviewPageBuilder from '@/components/PageBuilder/preview';
 import PageBuilder from '@/components/PageBuilder';
 
 export default async function SoftwareLayout({ children }: PropsWithChildren) {
-  const preview = getPreview();
+  const preview = await getPreview();
   const params = { path: `.software` };
   const page: SitePage | null = await getClient(preview).fetch(
     pageQuery,

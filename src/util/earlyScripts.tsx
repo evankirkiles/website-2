@@ -14,23 +14,11 @@ import { any as javascript } from 'code-tag';
 
 /* ------------------------------- Theme Color ------------------------------ */
 
-const COLOR_SCHEME_INLINE = javascript`
-if (typeof window !== "undefined") { 
-  let colorScheme = localStorage.getItem("daylight-color-scheme") || "auto";
-  if (colorScheme == "auto") {
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    colorScheme = mql.matches ? "dark" : "light";
-  }
-  document.documentElement.classList.add(\`\${colorScheme}-mode\`);
+export const COLOR_SCHEME_INLINE = javascript`
+let colorScheme = localStorage.getItem("daylight-color-scheme") || "auto";
+if (colorScheme == "auto") {
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
+  colorScheme = mql.matches ? "dark" : "light";
 }
+document.documentElement.classList.add(\`\${colorScheme}-mode\`);
 `;
-
-export const ColorSchemeScript = () => (
-  <script
-    id="daylight-color-scheme-script"
-    type="text/javascript"
-    dangerouslySetInnerHTML={{
-      __html: COLOR_SCHEME_INLINE,
-    }}
-  />
-);
