@@ -44,11 +44,13 @@ export default function generateMetadataForPage(page: SitePage): Metadata {
       title: OGTitle,
       description,
       url: page.path.current.replace('.', '/'),
+      images: [{ url: '/ewk_og.png', width: 1200, height: 630 }],
     },
     twitter: {
       title,
       description,
       site: page.path.current.replace('.', '/'),
+      images: ['/ewk_og.png'],
     },
   };
 }
